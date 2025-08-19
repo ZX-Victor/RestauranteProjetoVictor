@@ -1,6 +1,6 @@
 ﻿namespace RestauranteProjetoVictor
 {
-    partial class frmFood
+    partial class FrmFood
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFood));
             this.btnDrinks1 = new System.Windows.Forms.Button();
             this.btnSweets1 = new System.Windows.Forms.Button();
             this.btnChoose = new System.Windows.Forms.Button();
@@ -37,6 +38,9 @@
             this.txtSnack1 = new System.Windows.Forms.TextBox();
             this.txtSweets1 = new System.Windows.Forms.TextBox();
             this.txtDrinks1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnProdutos = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDrinks1
@@ -121,12 +125,34 @@
             this.txtDrinks1.Size = new System.Drawing.Size(120, 20);
             this.txtDrinks1.TabIndex = 8;
             // 
-            // frmFood
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(593, 270);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(275, 233);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnProdutos
+            // 
+            this.btnProdutos.Location = new System.Drawing.Point(12, 415);
+            this.btnProdutos.Name = "btnProdutos";
+            this.btnProdutos.Size = new System.Drawing.Size(108, 23);
+            this.btnProdutos.TabIndex = 10;
+            this.btnProdutos.Text = "Adicionar Produtos";
+            this.btnProdutos.UseVisualStyleBackColor = true;
+            this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
+            // 
+            // FrmFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnProdutos);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtDrinks1);
             this.Controls.Add(this.txtSweets1);
             this.Controls.Add(this.txtSnack1);
@@ -137,8 +163,10 @@
             this.Controls.Add(this.btnSweets1);
             this.Controls.Add(this.btnDrinks1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Name = "frmFood";
+            this.Name = "FrmFood";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.frmFood_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,5 +183,7 @@
         private System.Windows.Forms.TextBox txtSnack1;
         private System.Windows.Forms.TextBox txtSweets1;
         private System.Windows.Forms.TextBox txtDrinks1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnProdutos;
     }
 }
