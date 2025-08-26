@@ -37,16 +37,16 @@
             this.lblAlimento3 = new System.Windows.Forms.Label();
             this.txtAlimento3 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cJ3027414PR2DataSet = new RestauranteProjetoVictor.CJ3027414PR2DataSet();
-            this.alimentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.alimentosTableAdapter = new RestauranteProjetoVictor.CJ3027414PR2DataSetTableAdapters.AlimentosTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alimentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cJ3027414PR2DataSet = new RestauranteProjetoVictor.CJ3027414PR2DataSet();
+            this.alimentosTableAdapter = new RestauranteProjetoVictor.CJ3027414PR2DataSetTableAdapters.AlimentosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cJ3027414PR2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alimentosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cJ3027414PR2DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // txtAlimento
@@ -62,7 +62,7 @@
             this.btnAlimento.Name = "btnAlimento";
             this.btnAlimento.Size = new System.Drawing.Size(117, 23);
             this.btnAlimento.TabIndex = 2;
-            this.btnAlimento.Text = "Registrar Produto";
+            this.btnAlimento.Text = "Registrar Id";
             this.btnAlimento.UseVisualStyleBackColor = true;
             this.btnAlimento.Click += new System.EventHandler(this.btnAlimento_Click);
             // 
@@ -117,24 +117,10 @@
             this.precoDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.alimentosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(453, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(456, -1);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(344, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(345, 455);
             this.dataGridView1.TabIndex = 8;
-            // 
-            // cJ3027414PR2DataSet
-            // 
-            this.cJ3027414PR2DataSet.DataSetName = "CJ3027414PR2DataSet";
-            this.cJ3027414PR2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // alimentosBindingSource
-            // 
-            this.alimentosBindingSource.DataMember = "Alimentos";
-            this.alimentosBindingSource.DataSource = this.cJ3027414PR2DataSet;
-            // 
-            // alimentosTableAdapter
-            // 
-            this.alimentosTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -162,10 +148,25 @@
             this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
             // 
+            // alimentosBindingSource
+            // 
+            this.alimentosBindingSource.DataMember = "Alimentos";
+            this.alimentosBindingSource.DataSource = this.cJ3027414PR2DataSet;
+            // 
+            // cJ3027414PR2DataSet
+            // 
+            this.cJ3027414PR2DataSet.DataSetName = "CJ3027414PR2DataSet";
+            this.cJ3027414PR2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // alimentosTableAdapter
+            // 
+            this.alimentosTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtAlimento3);
@@ -179,8 +180,8 @@
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.FrmProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cJ3027414PR2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alimentosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cJ3027414PR2DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

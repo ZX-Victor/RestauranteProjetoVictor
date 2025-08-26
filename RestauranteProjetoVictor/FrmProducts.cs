@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace RestauranteProjetoVictor
             string tipo = txtAlimento.Text;
             //string preco = txtAlimento3.Text;
             decimal preco;
+            bool sucesso = decimal.TryParse(txtAlimento3.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out preco);
 
             // Valida os dados básicos
             if (!Decimal.TryParse(txtAlimento3.Text, out preco) 
@@ -44,7 +46,7 @@ namespace RestauranteProjetoVictor
                 {
                     conexao.Open();
 
-                    string query = "INSERT INTO Produtos (Nome, Tipo, Preco) VALUES (@nome, @tipo, @preco)";
+                    string query = "INSERT INTO Alimentos (Nome, Tipo, Preco) VALUES (@nome, @tipo, @preco)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexao))
                     {
@@ -56,7 +58,7 @@ namespace RestauranteProjetoVictor
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Produto registrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Id registrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             // Limpar campos, se quiser
                             txtAlimento.Clear();
                             txtAlimento2.Clear();
@@ -64,7 +66,7 @@ namespace RestauranteProjetoVictor
                         }
                         else
                         {
-                            MessageBox.Show("Não foi possível registrar o produto.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Não foi possível registrar o Id.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
