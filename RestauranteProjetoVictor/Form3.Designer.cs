@@ -44,6 +44,7 @@
             this.alimentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cJ3027414PR2DataSet = new RestauranteProjetoVictor.CJ3027414PR2DataSet();
             this.alimentosTableAdapter = new RestauranteProjetoVictor.CJ3027414PR2DataSetTableAdapters.AlimentosTableAdapter();
+            this.btnLoad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alimentosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJ3027414PR2DataSet)).BeginInit();
@@ -76,15 +77,19 @@
             // lblAlimento
             // 
             this.lblAlimento.AutoSize = true;
+            this.lblAlimento.BackColor = System.Drawing.Color.Gray;
+            this.lblAlimento.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblAlimento.Location = new System.Drawing.Point(12, 28);
             this.lblAlimento.Name = "lblAlimento";
             this.lblAlimento.Size = new System.Drawing.Size(28, 13);
             this.lblAlimento.TabIndex = 4;
             this.lblAlimento.Text = "Tipo";
+            this.lblAlimento.Click += new System.EventHandler(this.lblAlimento_Click);
             // 
             // lblAlimento2
             // 
             this.lblAlimento2.AutoSize = true;
+            this.lblAlimento2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblAlimento2.Location = new System.Drawing.Point(12, 71);
             this.lblAlimento2.Name = "lblAlimento2";
             this.lblAlimento2.Size = new System.Drawing.Size(35, 13);
@@ -94,6 +99,7 @@
             // lblAlimento3
             // 
             this.lblAlimento3.AutoSize = true;
+            this.lblAlimento3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblAlimento3.Location = new System.Drawing.Point(12, 113);
             this.lblAlimento3.Name = "lblAlimento3";
             this.lblAlimento3.Size = new System.Drawing.Size(35, 13);
@@ -119,8 +125,10 @@
             this.dataGridView1.DataSource = this.alimentosBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(456, -1);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(345, 455);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDoubleClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -162,12 +170,23 @@
             // 
             this.alimentosTableAdapter.ClearBeforeFill = true;
             // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(15, 415);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 9;
+            this.btnLoad.Text = "Atualizar";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
             // FrmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtAlimento3);
             this.Controls.Add(this.lblAlimento3);
@@ -204,5 +223,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnLoad;
     }
 }
