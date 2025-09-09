@@ -77,7 +77,7 @@
             // lblAlimento
             // 
             this.lblAlimento.AutoSize = true;
-            this.lblAlimento.BackColor = System.Drawing.Color.Gray;
+            this.lblAlimento.BackColor = System.Drawing.Color.Tan;
             this.lblAlimento.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblAlimento.Location = new System.Drawing.Point(12, 28);
             this.lblAlimento.Name = "lblAlimento";
@@ -116,6 +116,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Tan;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -184,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.dataGridView1);

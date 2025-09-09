@@ -44,7 +44,7 @@
             this.lblSignup.AutoSize = true;
             this.lblSignup.BackColor = System.Drawing.Color.White;
             this.lblSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignup.Location = new System.Drawing.Point(274, 249);
+            this.lblSignup.Location = new System.Drawing.Point(294, 279);
             this.lblSignup.Name = "lblSignup";
             this.lblSignup.Size = new System.Drawing.Size(188, 24);
             this.lblSignup.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(313, 324);
+            this.txtPassword.Location = new System.Drawing.Point(328, 366);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
@@ -64,7 +64,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.White;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(239, 325);
+            this.lblPassword.Location = new System.Drawing.Point(239, 366);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(49, 16);
             this.lblPassword.TabIndex = 4;
@@ -72,7 +72,7 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(313, 286);
+            this.txtUser.Location = new System.Drawing.Point(328, 317);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(100, 20);
             this.txtUser.TabIndex = 5;
@@ -83,7 +83,7 @@
             this.lblUser1.AutoSize = true;
             this.lblUser1.BackColor = System.Drawing.Color.White;
             this.lblUser1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser1.Location = new System.Drawing.Point(231, 287);
+            this.lblUser1.Location = new System.Drawing.Point(239, 317);
             this.lblUser1.Name = "lblUser1";
             this.lblUser1.Size = new System.Drawing.Size(57, 16);
             this.lblUser1.TabIndex = 6;
@@ -92,7 +92,7 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(436, 321);
+            this.btnLogin.Location = new System.Drawing.Point(449, 336);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(90, 23);
             this.btnLogin.TabIndex = 7;
@@ -103,9 +103,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(234, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(215, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(292, 222);
+            this.pictureBox1.Size = new System.Drawing.Size(355, 264);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -114,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);

@@ -35,11 +35,13 @@
             this.lblSnack = new System.Windows.Forms.Label();
             this.lblSweets = new System.Windows.Forms.Label();
             this.lblDrinks = new System.Windows.Forms.Label();
-            this.txtSnack1 = new System.Windows.Forms.TextBox();
-            this.txtSweets1 = new System.Windows.Forms.TextBox();
-            this.txtDrinks1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnProdutos = new System.Windows.Forms.Button();
+            this.cmbSalgados = new System.Windows.Forms.ComboBox();
+            this.cmbDoces = new System.Windows.Forms.ComboBox();
+            this.cmbBebidas = new System.Windows.Forms.ComboBox();
+            this.listBoxPedido = new System.Windows.Forms.ListBox();
+            this.btnAdicionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,58 +106,82 @@
             this.lblDrinks.TabIndex = 5;
             this.lblDrinks.Text = "Bebidas:";
             // 
-            // txtSnack1
-            // 
-            this.txtSnack1.Location = new System.Drawing.Point(336, 52);
-            this.txtSnack1.Name = "txtSnack1";
-            this.txtSnack1.Size = new System.Drawing.Size(120, 20);
-            this.txtSnack1.TabIndex = 6;
-            // 
-            // txtSweets1
-            // 
-            this.txtSweets1.Location = new System.Drawing.Point(336, 209);
-            this.txtSweets1.Name = "txtSweets1";
-            this.txtSweets1.Size = new System.Drawing.Size(120, 20);
-            this.txtSweets1.TabIndex = 7;
-            // 
-            // txtDrinks1
-            // 
-            this.txtDrinks1.Location = new System.Drawing.Point(336, 360);
-            this.txtDrinks1.Name = "txtDrinks1";
-            this.txtDrinks1.Size = new System.Drawing.Size(120, 20);
-            this.txtDrinks1.TabIndex = 8;
-            // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Tan;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(593, 270);
+            this.pictureBox1.Location = new System.Drawing.Point(601, 278);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(275, 233);
+            this.pictureBox1.Size = new System.Drawing.Size(259, 252);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
             // btnProdutos
             // 
-            this.btnProdutos.Location = new System.Drawing.Point(12, 415);
+            this.btnProdutos.Location = new System.Drawing.Point(670, 81);
             this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(108, 23);
+            this.btnProdutos.Size = new System.Drawing.Size(118, 31);
             this.btnProdutos.TabIndex = 10;
             this.btnProdutos.Text = "Adicionar Produtos";
             this.btnProdutos.UseVisualStyleBackColor = true;
             this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
             // 
+            // cmbSalgados
+            // 
+            this.cmbSalgados.FormattingEnabled = true;
+            this.cmbSalgados.Location = new System.Drawing.Point(335, 51);
+            this.cmbSalgados.Name = "cmbSalgados";
+            this.cmbSalgados.Size = new System.Drawing.Size(121, 21);
+            this.cmbSalgados.TabIndex = 11;
+            // 
+            // cmbDoces
+            // 
+            this.cmbDoces.FormattingEnabled = true;
+            this.cmbDoces.Location = new System.Drawing.Point(335, 209);
+            this.cmbDoces.Name = "cmbDoces";
+            this.cmbDoces.Size = new System.Drawing.Size(121, 21);
+            this.cmbDoces.TabIndex = 12;
+            // 
+            // cmbBebidas
+            // 
+            this.cmbBebidas.FormattingEnabled = true;
+            this.cmbBebidas.Location = new System.Drawing.Point(335, 357);
+            this.cmbBebidas.Name = "cmbBebidas";
+            this.cmbBebidas.Size = new System.Drawing.Size(121, 21);
+            this.cmbBebidas.TabIndex = 13;
+            // 
+            // listBoxPedido
+            // 
+            this.listBoxPedido.FormattingEnabled = true;
+            this.listBoxPedido.Location = new System.Drawing.Point(9, 12);
+            this.listBoxPedido.Name = "listBoxPedido";
+            this.listBoxPedido.Size = new System.Drawing.Size(318, 381);
+            this.listBoxPedido.TabIndex = 14;
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.Location = new System.Drawing.Point(670, 25);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(118, 32);
+            this.btnAdicionar.TabIndex = 15;
+            this.btnAdicionar.Text = "Adicionar ao Pedido";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
+            // 
             // FrmFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAdicionar);
+            this.Controls.Add(this.listBoxPedido);
+            this.Controls.Add(this.cmbBebidas);
+            this.Controls.Add(this.cmbDoces);
+            this.Controls.Add(this.cmbSalgados);
             this.Controls.Add(this.btnProdutos);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtDrinks1);
-            this.Controls.Add(this.txtSweets1);
-            this.Controls.Add(this.txtSnack1);
             this.Controls.Add(this.lblDrinks);
             this.Controls.Add(this.lblSweets);
             this.Controls.Add(this.lblSnack);
@@ -180,10 +206,12 @@
         private System.Windows.Forms.Label lblSnack;
         private System.Windows.Forms.Label lblSweets;
         private System.Windows.Forms.Label lblDrinks;
-        private System.Windows.Forms.TextBox txtSnack1;
-        private System.Windows.Forms.TextBox txtSweets1;
-        private System.Windows.Forms.TextBox txtDrinks1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnProdutos;
+        private System.Windows.Forms.ComboBox cmbSalgados;
+        private System.Windows.Forms.ComboBox cmbDoces;
+        private System.Windows.Forms.ComboBox cmbBebidas;
+        private System.Windows.Forms.ListBox listBoxPedido;
+        private System.Windows.Forms.Button btnAdicionar;
     }
 }
