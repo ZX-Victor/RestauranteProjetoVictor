@@ -42,7 +42,7 @@
             // lblSignup
             // 
             this.lblSignup.AutoSize = true;
-            this.lblSignup.BackColor = System.Drawing.Color.White;
+            this.lblSignup.BackColor = System.Drawing.Color.Tan;
             this.lblSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignup.Location = new System.Drawing.Point(294, 279);
             this.lblSignup.Name = "lblSignup";
@@ -62,7 +62,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.BackColor = System.Drawing.Color.White;
+            this.lblPassword.BackColor = System.Drawing.Color.Tan;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(239, 366);
             this.lblPassword.Name = "lblPassword";
@@ -81,7 +81,7 @@
             // lblUser1
             // 
             this.lblUser1.AutoSize = true;
-            this.lblUser1.BackColor = System.Drawing.Color.White;
+            this.lblUser1.BackColor = System.Drawing.Color.Tan;
             this.lblUser1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser1.Location = new System.Drawing.Point(239, 317);
             this.lblUser1.Name = "lblUser1";
@@ -91,13 +91,14 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.Color.FloralWhite;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(449, 336);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(90, 23);
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Fazer Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1

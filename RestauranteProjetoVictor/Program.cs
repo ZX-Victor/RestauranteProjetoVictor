@@ -16,7 +16,7 @@ namespace RestauranteProjetoVictor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmFood());
+            Application.Run(new FrmLogin());
         }
     }
 }
