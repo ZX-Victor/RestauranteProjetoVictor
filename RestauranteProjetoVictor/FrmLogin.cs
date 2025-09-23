@@ -84,5 +84,11 @@ namespace RestauranteProjetoVictor
 
             }
         }
+
+        private void btnCadastro_Click(object sender, EventArgs e)
+        {
+            FrmCadastro frmCadastro = new FrmCadastro();
+            frmCadastro.ShowDialog();
+        }
     }
 }

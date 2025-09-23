@@ -51,6 +51,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CJ3027414PR2DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FrmCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastro.Designer.cs">
+      <DependentUpon>FrmCadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCadastro.resx">
+      <DependentUpon>FrmCadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
       <SubType>Designer</SubType>

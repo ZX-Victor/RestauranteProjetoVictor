@@ -36,6 +36,8 @@
             this.lblUser1 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCadastro = new System.Windows.Forms.Button();
+            this.lblCadastro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,9 +48,9 @@
             this.lblSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignup.Location = new System.Drawing.Point(294, 279);
             this.lblSignup.Name = "lblSignup";
-            this.lblSignup.Size = new System.Drawing.Size(188, 24);
+            this.lblSignup.Size = new System.Drawing.Size(161, 24);
             this.lblSignup.TabIndex = 0;
-            this.lblSignup.Text = "Faça o seu Cadastro:";
+            this.lblSignup.Text = "Faça o seu Login:";
             this.lblSignup.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtPassword
@@ -111,12 +113,34 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // btnCadastro
+            // 
+            this.btnCadastro.Location = new System.Drawing.Point(662, 408);
+            this.btnCadastro.Name = "btnCadastro";
+            this.btnCadastro.Size = new System.Drawing.Size(115, 30);
+            this.btnCadastro.TabIndex = 9;
+            this.btnCadastro.Text = "Cadastre-se Aqui!";
+            this.btnCadastro.UseVisualStyleBackColor = true;
+            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
+            // 
+            // lblCadastro
+            // 
+            this.lblCadastro.AutoSize = true;
+            this.lblCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.lblCadastro.Location = new System.Drawing.Point(631, 366);
+            this.lblCadastro.Name = "lblCadastro";
+            this.lblCadastro.Size = new System.Drawing.Size(175, 24);
+            this.lblCadastro.TabIndex = 10;
+            this.lblCadastro.Text = "Não tem Cadastro? ";
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCadastro);
+            this.Controls.Add(this.btnCadastro);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblUser1);
@@ -143,6 +167,8 @@
         private System.Windows.Forms.Label lblUser1;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnCadastro;
+        private System.Windows.Forms.Label lblCadastro;
     }
 }
 

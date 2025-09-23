@@ -119,16 +119,16 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Tan;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(659, 349);
+            this.pictureBox1.Location = new System.Drawing.Point(520, 298);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(144, 142);
+            this.pictureBox1.Size = new System.Drawing.Size(408, 220);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
             // btnProdutos
             // 
-            this.btnProdutos.Location = new System.Drawing.Point(670, 81);
+            this.btnProdutos.Location = new System.Drawing.Point(670, 45);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(118, 31);
             this.btnProdutos.TabIndex = 10;
@@ -155,7 +155,7 @@
             // cmbBebidas
             // 
             this.cmbBebidas.FormattingEnabled = true;
-            this.cmbBebidas.Location = new System.Drawing.Point(489, 269);
+            this.cmbBebidas.Location = new System.Drawing.Point(488, 271);
             this.cmbBebidas.Name = "cmbBebidas";
             this.cmbBebidas.Size = new System.Drawing.Size(121, 21);
             this.cmbBebidas.TabIndex = 13;
@@ -168,9 +168,9 @@
             this.columnHeader3,
             this.columnHeader4});
             this.ltvPedido.HideSelection = false;
-            this.ltvPedido.Location = new System.Drawing.Point(12, 25);
+            this.ltvPedido.Location = new System.Drawing.Point(2, 12);
             this.ltvPedido.Name = "ltvPedido";
-            this.ltvPedido.Size = new System.Drawing.Size(445, 397);
+            this.ltvPedido.Size = new System.Drawing.Size(455, 431);
             this.ltvPedido.TabIndex = 16;
             this.ltvPedido.UseCompatibleStateImageBehavior = false;
             this.ltvPedido.View = System.Windows.Forms.View.Details;

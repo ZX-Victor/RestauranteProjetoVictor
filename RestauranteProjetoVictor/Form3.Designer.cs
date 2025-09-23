@@ -124,10 +124,10 @@
             this.precoDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.alimentosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(456, -1);
+            this.dataGridView1.Location = new System.Drawing.Point(455, 1);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(345, 455);
+            this.dataGridView1.Size = new System.Drawing.Size(343, 455);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDoubleClick);
             // 
