@@ -90,5 +90,11 @@ namespace RestauranteProjetoVictor
             FrmCadastro frmCadastro = new FrmCadastro();
             frmCadastro.ShowDialog();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FrmRecuperarSenha frm = new FrmRecuperarSenha();
+            frm.ShowDialog();
+        }
     }
 }

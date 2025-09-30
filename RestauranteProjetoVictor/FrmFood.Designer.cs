@@ -168,9 +168,9 @@
             this.columnHeader3,
             this.columnHeader4});
             this.ltvPedido.HideSelection = false;
-            this.ltvPedido.Location = new System.Drawing.Point(2, 12);
+            this.ltvPedido.Location = new System.Drawing.Point(-2, 0);
             this.ltvPedido.Name = "ltvPedido";
-            this.ltvPedido.Size = new System.Drawing.Size(455, 431);
+            this.ltvPedido.Size = new System.Drawing.Size(459, 453);
             this.ltvPedido.TabIndex = 16;
             this.ltvPedido.UseCompatibleStateImageBehavior = false;
             this.ltvPedido.View = System.Windows.Forms.View.Details;

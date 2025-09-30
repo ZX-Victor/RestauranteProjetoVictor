@@ -38,6 +38,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCadastro = new System.Windows.Forms.Button();
             this.lblCadastro = new System.Windows.Forms.Label();
+            this.btnEsqueciMinhaSenha = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,12 +134,27 @@
             this.lblCadastro.TabIndex = 10;
             this.lblCadastro.Text = "Não tem Cadastro? ";
             // 
+            // btnEsqueciMinhaSenha
+            // 
+            this.btnEsqueciMinhaSenha.BackColor = System.Drawing.Color.Tan;
+            this.btnEsqueciMinhaSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEsqueciMinhaSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F);
+            this.btnEsqueciMinhaSenha.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnEsqueciMinhaSenha.Location = new System.Drawing.Point(434, 366);
+            this.btnEsqueciMinhaSenha.Name = "btnEsqueciMinhaSenha";
+            this.btnEsqueciMinhaSenha.Size = new System.Drawing.Size(125, 22);
+            this.btnEsqueciMinhaSenha.TabIndex = 11;
+            this.btnEsqueciMinhaSenha.Text = "Esqueci minha senha";
+            this.btnEsqueciMinhaSenha.UseVisualStyleBackColor = false;
+            this.btnEsqueciMinhaSenha.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEsqueciMinhaSenha);
             this.Controls.Add(this.lblCadastro);
             this.Controls.Add(this.btnCadastro);
             this.Controls.Add(this.pictureBox1);
@@ -148,6 +164,7 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblSignup);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login do Funcionario";
@@ -169,6 +186,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnCadastro;
         private System.Windows.Forms.Label lblCadastro;
+        private System.Windows.Forms.Button btnEsqueciMinhaSenha;
     }
 }
 
