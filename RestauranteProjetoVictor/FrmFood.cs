@@ -14,6 +14,9 @@ namespace RestauranteProjetoVictor
 {
     public partial class FrmFood : Form
     {
+        int numeroPedido = 1;
+        decimal subtotalAtual = 0;
+        List<decimal> listaPrecos = new List<decimal>();
         private List<float> preco;
         public FrmFood()
         {
@@ -65,152 +68,141 @@ namespace RestauranteProjetoVictor
             frmProducts.ShowDialog();
 
         }
-        private void Form2_Load(object sender, EventArgs e)
+        private void EnsurePrecos(string tipo)
         {
+            // se já tiver preços e for do mesmo tipo, você pode pular esta carga.
+            // Para simplicidade, sempre recarrego:
+            listaPrecos.Clear();
 
-        }
+            string connectionString = "Data Source=sqlexpress;Initial Catalog=CJ3027414PR2;User Id=aluno;Password=aluno;";
+            string query = "SELECT Preco FROM Alimentos WHERE Tipo = @Tipo";
 
-      
-
-        private void btnChoose_Click(object sender, EventArgs e)
-        {
-            if (preco.Count == 0)
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-
-                string connectionString = "Data Source=sqlexpress;Initial Catalog=CJ3027414PR2;User Id=aluno;Password=aluno;";
-                string query = "SELECT Preco FROM Alimentos WHERE Tipo = @Tipo";
-
-                SqlConnection connection = new SqlConnection(connectionString);
-
-                using (SqlCommand command = new SqlCommand(query, connection))
+                command.Parameters.AddWithValue("@Tipo", tipo);
+                try
                 {
-                    command.Parameters.AddWithValue("@Tipo", "Salgados");
-
-                    try
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        connection.Open();
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        while (reader.Read())
                         {
-                            int i = 0;
-                            while (reader.Read())
-                            {
-                                preco.Add(Convert.ToInt32(reader[0]));
-                            }
+                            // supondo que Preco é decimal no banco
+                            listaPrecos.Add(Convert.ToDecimal(reader[0]));
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
-                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao acessar o banco de dados: " + ex.Message);
                 }
             }
-
-
-            ListViewItem item = new ListViewItem(cmbSalgados.Text);
-
-            // Adiciona subitens (colunas adicionais)
-            item.SubItems.Add(cmbQtb.Text);
-            item.SubItems.Add(preco[cmbSalgados.SelectedIndex].ToString());
-            item.SubItems.Add($"R$ {(int.Parse(cmbQtb.Text) * preco[cmbSalgados.SelectedIndex]):F2}");
-
-            // Adiciona o item ao ListView
-            ltvPedido.Items.Add(item);
-
-
         }
 
-        private void btnSweets1_Click(object sender, EventArgs e)
+
+
+        private void btnChoose_Click(object sender, EventArgs e) // salgados
         {
-            if (preco.Count == 0)
-            {
+            // carrega preços dos salgados na lista
+            EnsurePrecos("Salgados");
 
-                string connectionString = "Data Source=sqlexpress;Initial Catalog=CJ3027414PR2;User Id=aluno;Password=aluno;";
-                string query = "SELECT Preco FROM Alimentos WHERE Tipo = @Tipo";
+            if (cmbSalgados.SelectedIndex < 0) return;
 
-                SqlConnection connection = new SqlConnection(connectionString);
+            string produto = cmbSalgados.Text;
+            int quantidade = int.TryParse(cmbQtb.Text, out var q1) ? q1 : 1;
+            decimal precoUnitario = listaPrecos[cmbSalgados.SelectedIndex];
+            decimal total = quantidade * precoUnitario;
 
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Tipo", "Doces");
+            ListViewItem itemSalgado = new ListViewItem(produto);
+            itemSalgado.SubItems.Add(quantidade.ToString());
+            itemSalgado.SubItems.Add(precoUnitario.ToString("C"));
+            itemSalgado.SubItems.Add(total.ToString("C"));
+            ltvPedido.Items.Add(itemSalgado);
 
-                    try
-                    {
-                        connection.Open();
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            int i = 0;
-                            while (reader.Read())
-                            {
-                                preco.Add(Convert.ToInt32(reader[0]));
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
-                    }
-                }
-            }
+            subtotalAtual += total;
+        }
 
+        private void btnSweets1_Click(object sender, EventArgs e) // doces
+        {
+            EnsurePrecos("Doces");
 
-            ListViewItem item = new ListViewItem(cmbDoces.Text);
+            if (cmbDoces.SelectedIndex < 0) return;
 
-            // Adiciona subitens (colunas adicionais)
-            item.SubItems.Add(cmbQtb1.Text);
-            item.SubItems.Add(preco[cmbDoces.SelectedIndex].ToString());
-            item.SubItems.Add($"R$ {(int.Parse(cmbQtb1.Text) * preco[cmbDoces.SelectedIndex]):F2}");
+            string produto = cmbDoces.Text;
+            int quantidade = int.TryParse(cmbQtb1.Text, out var q2) ? q2 : 1;
+            decimal precoUnitario = listaPrecos[cmbDoces.SelectedIndex];
+            decimal total = quantidade * precoUnitario;
 
-            // Adiciona o item ao ListView
-            ltvPedido.Items.Add(item);
+            ListViewItem itemDoce = new ListViewItem(produto);
+            itemDoce.SubItems.Add(quantidade.ToString());
+            itemDoce.SubItems.Add(precoUnitario.ToString("C"));
+            itemDoce.SubItems.Add(total.ToString("C"));
+            ltvPedido.Items.Add(itemDoce);
+
+            subtotalAtual += total;
         }
 
         private void btnDrinks1_Click(object sender, EventArgs e)
         {
-            if (preco.Count == 0)
+            EnsurePrecos("Bebida");
+
+            if (cmbBebidas.SelectedIndex < 0 || cmbBebidas.SelectedIndex >= listaPrecos.Count)
             {
-
-                string connectionString = "Data Source=sqlexpress;Initial Catalog=CJ3027414PR2;User Id=aluno;Password=aluno;";
-                string query = "SELECT Preco FROM Alimentos WHERE Tipo = @Tipo";
-
-                SqlConnection connection = new SqlConnection(connectionString);
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Tipo", "Bebidas");
-
-                    try
-                    {
-                        connection.Open();
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            int i = 0;
-                            while (reader.Read())
-                            {
-                                preco.Add(Convert.ToInt32(reader[0]));
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Erro ao acessar o banco de dados: " + ex.Message);
-                    }
-                }
+                MessageBox.Show("Preço da bebida não encontrado no banco de dados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
+            string produto = cmbBebidas.Text;
+            int quantidade = int.TryParse(cmbQtb2.Text, out var q3) ? q3 : 1;
+            decimal precoUnitario = listaPrecos[cmbBebidas.SelectedIndex];
+            decimal total = quantidade * precoUnitario;
 
-            ListViewItem item = new ListViewItem(cmbBebidas.Text);
+            ListViewItem itemBebida = new ListViewItem(produto);
+            itemBebida.SubItems.Add(quantidade.ToString());
+            itemBebida.SubItems.Add(precoUnitario.ToString("C"));
+            itemBebida.SubItems.Add(total.ToString("C"));
+            ltvPedido.Items.Add(itemBebida);
 
-            // Adiciona subitens (colunas adicionais)
-            item.SubItems.Add(cmbQtb2.Text);
-            item.SubItems.Add(preco[cmbBebidas.SelectedIndex].ToString());
-            item.SubItems.Add($"R$ {(int.Parse(cmbQtb2.Text) * preco[cmbBebidas.SelectedIndex]):F2}");
-
-            // Adiciona o item ao ListView
-            ltvPedido.Items.Add(item);
+            subtotalAtual += total;
         }
 
-       
-        
+        private void btnNovoPedido_Click(object sender, EventArgs e)
+        {
+            // se houver itens no pedido atual, adiciona subtotal do pedido anterior
+            if (subtotalAtual > 0)
+            {
+                ListViewItem subtotalItem = new ListViewItem($"Subtotal Pedido #{numeroPedido}:");
+                subtotalItem.SubItems.Add("");
+                subtotalItem.SubItems.Add("");
+                subtotalItem.SubItems.Add(subtotalAtual.ToString("C"));
+                subtotalItem.ForeColor = Color.DarkGreen;
+                subtotalItem.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+                ltvPedido.Items.Add(subtotalItem);
+
+                // linha em branco
+                ltvPedido.Items.Add(new ListViewItem(""));
+            }
+
+            // começar novo pedido: incrementa uma vez
+            numeroPedido++;
+            subtotalAtual = 0m;
+
+            ListViewItem separadorItem = new ListViewItem($"--- Pedido #{numeroPedido} ---");
+            separadorItem.SubItems.Add("");
+            separadorItem.SubItems.Add("");
+            separadorItem.SubItems.Add("");
+            separadorItem.BackColor = Color.Beige;
+            separadorItem.ForeColor = Color.Brown;
+            separadorItem.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            ltvPedido.Items.Add(separadorItem);
+        }
     }
- }
+}
+
+
+
+
+
+
 

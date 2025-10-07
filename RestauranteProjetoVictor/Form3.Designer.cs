@@ -54,34 +54,39 @@
             // 
             this.txtAlimento.Location = new System.Drawing.Point(75, 28);
             this.txtAlimento.Name = "txtAlimento";
-            this.txtAlimento.Size = new System.Drawing.Size(100, 20);
+            this.txtAlimento.Size = new System.Drawing.Size(100, 22);
             this.txtAlimento.TabIndex = 0;
             // 
             // btnAlimento
             // 
+            this.btnAlimento.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btnAlimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlimento.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAlimento.ForeColor = System.Drawing.Color.Transparent;
             this.btnAlimento.Location = new System.Drawing.Point(224, 71);
             this.btnAlimento.Name = "btnAlimento";
-            this.btnAlimento.Size = new System.Drawing.Size(117, 23);
+            this.btnAlimento.Size = new System.Drawing.Size(117, 34);
             this.btnAlimento.TabIndex = 2;
             this.btnAlimento.Text = "Registrar Id";
-            this.btnAlimento.UseVisualStyleBackColor = true;
+            this.btnAlimento.UseVisualStyleBackColor = false;
             this.btnAlimento.Click += new System.EventHandler(this.btnAlimento_Click);
             // 
             // txtAlimento2
             // 
             this.txtAlimento2.Location = new System.Drawing.Point(75, 71);
             this.txtAlimento2.Name = "txtAlimento2";
-            this.txtAlimento2.Size = new System.Drawing.Size(100, 20);
+            this.txtAlimento2.Size = new System.Drawing.Size(100, 22);
             this.txtAlimento2.TabIndex = 3;
             // 
             // lblAlimento
             // 
             this.lblAlimento.AutoSize = true;
             this.lblAlimento.BackColor = System.Drawing.Color.Tan;
-            this.lblAlimento.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAlimento.Font = new System.Drawing.Font("Segoe UI", 12.75F);
+            this.lblAlimento.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblAlimento.Location = new System.Drawing.Point(12, 28);
             this.lblAlimento.Name = "lblAlimento";
-            this.lblAlimento.Size = new System.Drawing.Size(28, 13);
+            this.lblAlimento.Size = new System.Drawing.Size(43, 23);
             this.lblAlimento.TabIndex = 4;
             this.lblAlimento.Text = "Tipo";
             this.lblAlimento.Click += new System.EventHandler(this.lblAlimento_Click);
@@ -89,20 +94,22 @@
             // lblAlimento2
             // 
             this.lblAlimento2.AutoSize = true;
-            this.lblAlimento2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAlimento2.Font = new System.Drawing.Font("Segoe UI", 12.75F);
+            this.lblAlimento2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblAlimento2.Location = new System.Drawing.Point(12, 71);
             this.lblAlimento2.Name = "lblAlimento2";
-            this.lblAlimento2.Size = new System.Drawing.Size(35, 13);
+            this.lblAlimento2.Size = new System.Drawing.Size(57, 23);
             this.lblAlimento2.TabIndex = 5;
             this.lblAlimento2.Text = "Nome";
             // 
             // lblAlimento3
             // 
             this.lblAlimento3.AutoSize = true;
-            this.lblAlimento3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAlimento3.Font = new System.Drawing.Font("Segoe UI", 12.75F);
+            this.lblAlimento3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblAlimento3.Location = new System.Drawing.Point(12, 113);
             this.lblAlimento3.Name = "lblAlimento3";
-            this.lblAlimento3.Size = new System.Drawing.Size(35, 13);
+            this.lblAlimento3.Size = new System.Drawing.Size(53, 23);
             this.lblAlimento3.TabIndex = 6;
             this.lblAlimento3.Text = "Preco";
             // 
@@ -110,7 +117,7 @@
             // 
             this.txtAlimento3.Location = new System.Drawing.Point(75, 113);
             this.txtAlimento3.Name = "txtAlimento3";
-            this.txtAlimento3.Size = new System.Drawing.Size(100, 20);
+            this.txtAlimento3.Size = new System.Drawing.Size(100, 22);
             this.txtAlimento3.TabIndex = 7;
             // 
             // dataGridView1
@@ -173,12 +180,16 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(15, 415);
+            this.btnLoad.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLoad.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLoad.Location = new System.Drawing.Point(12, 415);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.Size = new System.Drawing.Size(80, 23);
             this.btnLoad.TabIndex = 9;
             this.btnLoad.Text = "Atualizar";
-            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.UseVisualStyleBackColor = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // FrmProducts
@@ -196,6 +207,7 @@
             this.Controls.Add(this.txtAlimento2);
             this.Controls.Add(this.btnAlimento);
             this.Controls.Add(this.txtAlimento);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmProducts";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.FrmProducts_Load);

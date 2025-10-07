@@ -47,7 +47,7 @@
             this.lblSignup.AutoSize = true;
             this.lblSignup.BackColor = System.Drawing.Color.Tan;
             this.lblSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignup.Location = new System.Drawing.Point(294, 279);
+            this.lblSignup.Location = new System.Drawing.Point(297, 280);
             this.lblSignup.Name = "lblSignup";
             this.lblSignup.Size = new System.Drawing.Size(161, 24);
             this.lblSignup.TabIndex = 0;
@@ -56,28 +56,28 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(328, 366);
+            this.txtPassword.Location = new System.Drawing.Point(319, 366);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(109, 22);
             this.txtPassword.TabIndex = 1;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.Tan;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
             this.lblPassword.Location = new System.Drawing.Point(239, 366);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(49, 16);
+            this.lblPassword.Size = new System.Drawing.Size(61, 20);
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Senha:";
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(328, 317);
+            this.txtUser.Location = new System.Drawing.Point(319, 317);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(100, 20);
+            this.txtUser.Size = new System.Drawing.Size(109, 22);
             this.txtUser.TabIndex = 5;
             this.txtUser.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
@@ -85,20 +85,22 @@
             // 
             this.lblUser1.AutoSize = true;
             this.lblUser1.BackColor = System.Drawing.Color.Tan;
-            this.lblUser1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
             this.lblUser1.Location = new System.Drawing.Point(239, 317);
             this.lblUser1.Name = "lblUser1";
-            this.lblUser1.Size = new System.Drawing.Size(57, 16);
+            this.lblUser1.Size = new System.Drawing.Size(72, 20);
             this.lblUser1.TabIndex = 6;
             this.lblUser1.Text = "Usuário:";
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FloralWhite;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(449, 336);
+            this.btnLogin.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnLogin.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLogin.Location = new System.Drawing.Point(449, 327);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(90, 23);
+            this.btnLogin.Size = new System.Drawing.Size(121, 33);
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Fazer Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -107,7 +109,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(215, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(215, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(355, 264);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -116,33 +118,37 @@
             // 
             // btnCadastro
             // 
-            this.btnCadastro.Location = new System.Drawing.Point(662, 408);
+            this.btnCadastro.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btnCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastro.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCadastro.ForeColor = System.Drawing.Color.Transparent;
+            this.btnCadastro.Location = new System.Drawing.Point(645, 391);
             this.btnCadastro.Name = "btnCadastro";
-            this.btnCadastro.Size = new System.Drawing.Size(115, 30);
+            this.btnCadastro.Size = new System.Drawing.Size(134, 47);
             this.btnCadastro.TabIndex = 9;
             this.btnCadastro.Text = "Cadastre-se Aqui!";
-            this.btnCadastro.UseVisualStyleBackColor = true;
+            this.btnCadastro.UseVisualStyleBackColor = false;
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
             // lblCadastro
             // 
             this.lblCadastro.AutoSize = true;
-            this.lblCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblCadastro.Location = new System.Drawing.Point(631, 366);
+            this.lblCadastro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadastro.Location = new System.Drawing.Point(624, 363);
             this.lblCadastro.Name = "lblCadastro";
-            this.lblCadastro.Size = new System.Drawing.Size(175, 24);
+            this.lblCadastro.Size = new System.Drawing.Size(178, 25);
             this.lblCadastro.TabIndex = 10;
             this.lblCadastro.Text = "Não tem Cadastro? ";
             // 
             // btnEsqueciMinhaSenha
             // 
-            this.btnEsqueciMinhaSenha.BackColor = System.Drawing.Color.Tan;
+            this.btnEsqueciMinhaSenha.BackColor = System.Drawing.Color.SaddleBrown;
             this.btnEsqueciMinhaSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEsqueciMinhaSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F);
-            this.btnEsqueciMinhaSenha.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnEsqueciMinhaSenha.Location = new System.Drawing.Point(434, 366);
+            this.btnEsqueciMinhaSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnEsqueciMinhaSenha.ForeColor = System.Drawing.Color.Transparent;
+            this.btnEsqueciMinhaSenha.Location = new System.Drawing.Point(301, 415);
             this.btnEsqueciMinhaSenha.Name = "btnEsqueciMinhaSenha";
-            this.btnEsqueciMinhaSenha.Size = new System.Drawing.Size(125, 22);
+            this.btnEsqueciMinhaSenha.Size = new System.Drawing.Size(147, 32);
             this.btnEsqueciMinhaSenha.TabIndex = 11;
             this.btnEsqueciMinhaSenha.Text = "Esqueci minha senha";
             this.btnEsqueciMinhaSenha.UseVisualStyleBackColor = false;
@@ -164,6 +170,7 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblSignup);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

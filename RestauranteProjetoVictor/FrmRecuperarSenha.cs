@@ -30,16 +30,12 @@ namespace RestauranteProjetoVictor
 
         private void FrmRecuperarSenha_Load(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=sqlexpress;Initial Catalog=CJ3027414PR2;User Id=aluno;Password=aluno;";
 
-            {
-                InitializeComponent();
-            }
         }
 
         private void btnRedefinirSenha_Click(object sender, EventArgs e)
         {
-            string usuario = txtConfirmaçãoDeUsuario.Text.Trim();
+            string usuario = txtConfirmaçãoDeUsuario.Text;
             string novaSenha = txtRenovaçãoDaSenha.Text;
             string confirmar = txtConfirmeSuaSenha.Text;
 
@@ -59,10 +55,11 @@ namespace RestauranteProjetoVictor
 
             try
             {
-                using (SqlConnection conn = new SqlConnection("sua_connection_string"))
+                string connectionString = "Data Source=sqlexpress;Initial Catalog=CJ3027414PR2;User Id=aluno;Password=aluno;";
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "UPDATE Funcionarios SET Senha = @senha WHERE Usuario = @usuario";
+                    string query = "UPDATE Usuarios SET Senha = @senha WHERE Usuario = @usuario";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@senha", novaSenha);
                     cmd.Parameters.AddWithValue("@usuario", usuario);

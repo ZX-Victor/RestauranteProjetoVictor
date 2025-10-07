@@ -40,9 +40,10 @@
             // lblNovoUsuario
             // 
             this.lblNovoUsuario.AutoSize = true;
-            this.lblNovoUsuario.Location = new System.Drawing.Point(217, 91);
+            this.lblNovoUsuario.Font = new System.Drawing.Font("Segoe UI", 12.75F);
+            this.lblNovoUsuario.Location = new System.Drawing.Point(216, 81);
             this.lblNovoUsuario.Name = "lblNovoUsuario";
-            this.lblNovoUsuario.Size = new System.Drawing.Size(107, 13);
+            this.lblNovoUsuario.Size = new System.Drawing.Size(174, 23);
             this.lblNovoUsuario.TabIndex = 0;
             this.lblNovoUsuario.Text = "Confirme seu Usuário";
             this.lblNovoUsuario.Click += new System.EventHandler(this.lblNovoUsuario_Click);
@@ -50,9 +51,10 @@
             // lblRenovaçãoDaSenha
             // 
             this.lblRenovaçãoDaSenha.AutoSize = true;
-            this.lblRenovaçãoDaSenha.Location = new System.Drawing.Point(217, 203);
+            this.lblRenovaçãoDaSenha.Font = new System.Drawing.Font("Segoe UI", 12.75F);
+            this.lblRenovaçãoDaSenha.Location = new System.Drawing.Point(216, 193);
             this.lblRenovaçãoDaSenha.Name = "lblRenovaçãoDaSenha";
-            this.lblRenovaçãoDaSenha.Size = new System.Drawing.Size(89, 13);
+            this.lblRenovaçãoDaSenha.Size = new System.Drawing.Size(135, 23);
             this.lblRenovaçãoDaSenha.TabIndex = 1;
             this.lblRenovaçãoDaSenha.Text = "Sua Nova Senha";
             this.lblRenovaçãoDaSenha.Click += new System.EventHandler(this.lblRenovaçãoDaSenha_Click);
@@ -60,9 +62,10 @@
             // lblConfirmeSuaSenha
             // 
             this.lblConfirmeSuaSenha.AutoSize = true;
-            this.lblConfirmeSuaSenha.Location = new System.Drawing.Point(217, 320);
+            this.lblConfirmeSuaSenha.Font = new System.Drawing.Font("Segoe UI", 12.75F);
+            this.lblConfirmeSuaSenha.Location = new System.Drawing.Point(216, 310);
             this.lblConfirmeSuaSenha.Name = "lblConfirmeSuaSenha";
-            this.lblConfirmeSuaSenha.Size = new System.Drawing.Size(104, 13);
+            this.lblConfirmeSuaSenha.Size = new System.Drawing.Size(165, 23);
             this.lblConfirmeSuaSenha.TabIndex = 2;
             this.lblConfirmeSuaSenha.Text = "Confirme Sua Senha";
             // 
@@ -70,7 +73,7 @@
             // 
             this.txtConfirmaçãoDeUsuario.Location = new System.Drawing.Point(220, 107);
             this.txtConfirmaçãoDeUsuario.Name = "txtConfirmaçãoDeUsuario";
-            this.txtConfirmaçãoDeUsuario.Size = new System.Drawing.Size(119, 20);
+            this.txtConfirmaçãoDeUsuario.Size = new System.Drawing.Size(131, 22);
             this.txtConfirmaçãoDeUsuario.TabIndex = 3;
             // 
             // txtRenovaçãoDaSenha
@@ -78,7 +81,7 @@
             this.txtRenovaçãoDaSenha.Location = new System.Drawing.Point(220, 219);
             this.txtRenovaçãoDaSenha.Name = "txtRenovaçãoDaSenha";
             this.txtRenovaçãoDaSenha.PasswordChar = '*';
-            this.txtRenovaçãoDaSenha.Size = new System.Drawing.Size(119, 20);
+            this.txtRenovaçãoDaSenha.Size = new System.Drawing.Size(131, 22);
             this.txtRenovaçãoDaSenha.TabIndex = 4;
             // 
             // txtConfirmeSuaSenha
@@ -86,17 +89,21 @@
             this.txtConfirmeSuaSenha.Location = new System.Drawing.Point(220, 336);
             this.txtConfirmeSuaSenha.Name = "txtConfirmeSuaSenha";
             this.txtConfirmeSuaSenha.PasswordChar = '*';
-            this.txtConfirmeSuaSenha.Size = new System.Drawing.Size(119, 20);
+            this.txtConfirmeSuaSenha.Size = new System.Drawing.Size(131, 22);
             this.txtConfirmeSuaSenha.TabIndex = 5;
             // 
             // btnRedefinirSenha
             // 
-            this.btnRedefinirSenha.Location = new System.Drawing.Point(387, 336);
+            this.btnRedefinirSenha.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btnRedefinirSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRedefinirSenha.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRedefinirSenha.ForeColor = System.Drawing.Color.Transparent;
+            this.btnRedefinirSenha.Location = new System.Drawing.Point(488, 211);
             this.btnRedefinirSenha.Name = "btnRedefinirSenha";
-            this.btnRedefinirSenha.Size = new System.Drawing.Size(123, 23);
+            this.btnRedefinirSenha.Size = new System.Drawing.Size(123, 44);
             this.btnRedefinirSenha.TabIndex = 6;
             this.btnRedefinirSenha.Text = "Redefinir Sua Senha";
-            this.btnRedefinirSenha.UseVisualStyleBackColor = true;
+            this.btnRedefinirSenha.UseVisualStyleBackColor = false;
             this.btnRedefinirSenha.Click += new System.EventHandler(this.btnRedefinirSenha_Click);
             // 
             // FrmRecuperarSenha
@@ -112,6 +119,7 @@
             this.Controls.Add(this.lblConfirmeSuaSenha);
             this.Controls.Add(this.lblRenovaçãoDaSenha);
             this.Controls.Add(this.lblNovoUsuario);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmRecuperarSenha";
             this.Text = "FrmRecuperarSenha";
             this.Load += new System.EventHandler(this.FrmRecuperarSenha_Load);
