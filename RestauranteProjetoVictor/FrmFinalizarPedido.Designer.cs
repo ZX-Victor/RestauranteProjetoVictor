@@ -32,9 +32,9 @@
             this.lblResumo = new System.Windows.Forms.Label();
             this.btnPedidoFinalizado = new System.Windows.Forms.Button();
             this.grpResumo = new System.Windows.Forms.GroupBox();
-            this.rdbDinheiro = new System.Windows.Forms.RadioButton();
-            this.rdbCartao = new System.Windows.Forms.RadioButton();
             this.rdbPix = new System.Windows.Forms.RadioButton();
+            this.rdbCartao = new System.Windows.Forms.RadioButton();
+            this.rdbDinheiro = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpResumo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,12 +61,15 @@
             // 
             // btnPedidoFinalizado
             // 
+            this.btnPedidoFinalizado.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btnPedidoFinalizado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPedidoFinalizado.ForeColor = System.Drawing.Color.Transparent;
             this.btnPedidoFinalizado.Location = new System.Drawing.Point(254, 267);
             this.btnPedidoFinalizado.Name = "btnPedidoFinalizado";
             this.btnPedidoFinalizado.Size = new System.Drawing.Size(153, 46);
             this.btnPedidoFinalizado.TabIndex = 2;
             this.btnPedidoFinalizado.Text = "Confirmar Pagamento";
-            this.btnPedidoFinalizado.UseVisualStyleBackColor = true;
+            this.btnPedidoFinalizado.UseVisualStyleBackColor = false;
             this.btnPedidoFinalizado.Click += new System.EventHandler(this.btnPedidoFinalizado_Click);
             // 
             // grpResumo
@@ -82,17 +85,17 @@
             this.grpResumo.TabStop = false;
             this.grpResumo.Text = "Resumo do Pedido";
             // 
-            // rdbDinheiro
+            // rdbPix
             // 
-            this.rdbDinheiro.AutoSize = true;
-            this.rdbDinheiro.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rdbDinheiro.Location = new System.Drawing.Point(20, 112);
-            this.rdbDinheiro.Name = "rdbDinheiro";
-            this.rdbDinheiro.Size = new System.Drawing.Size(79, 23);
-            this.rdbDinheiro.TabIndex = 4;
-            this.rdbDinheiro.TabStop = true;
-            this.rdbDinheiro.Text = "Dinheiro";
-            this.rdbDinheiro.UseVisualStyleBackColor = true;
+            this.rdbPix.AutoSize = true;
+            this.rdbPix.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.rdbPix.Location = new System.Drawing.Point(20, 221);
+            this.rdbPix.Name = "rdbPix";
+            this.rdbPix.Size = new System.Drawing.Size(47, 23);
+            this.rdbPix.TabIndex = 6;
+            this.rdbPix.TabStop = true;
+            this.rdbPix.Text = "PIX";
+            this.rdbPix.UseVisualStyleBackColor = true;
             // 
             // rdbCartao
             // 
@@ -106,17 +109,17 @@
             this.rdbCartao.Text = "Cartão";
             this.rdbCartao.UseVisualStyleBackColor = true;
             // 
-            // rdbPix
+            // rdbDinheiro
             // 
-            this.rdbPix.AutoSize = true;
-            this.rdbPix.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rdbPix.Location = new System.Drawing.Point(20, 221);
-            this.rdbPix.Name = "rdbPix";
-            this.rdbPix.Size = new System.Drawing.Size(47, 23);
-            this.rdbPix.TabIndex = 6;
-            this.rdbPix.TabStop = true;
-            this.rdbPix.Text = "PIX";
-            this.rdbPix.UseVisualStyleBackColor = true;
+            this.rdbDinheiro.AutoSize = true;
+            this.rdbDinheiro.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.rdbDinheiro.Location = new System.Drawing.Point(20, 112);
+            this.rdbDinheiro.Name = "rdbDinheiro";
+            this.rdbDinheiro.Size = new System.Drawing.Size(79, 23);
+            this.rdbDinheiro.TabIndex = 4;
+            this.rdbDinheiro.TabStop = true;
+            this.rdbDinheiro.Text = "Dinheiro";
+            this.rdbDinheiro.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 

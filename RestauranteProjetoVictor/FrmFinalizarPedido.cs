@@ -63,6 +63,19 @@ namespace RestauranteProjetoVictor
             MessageBox.Show($"Pagamento do pedido confirmado via {formaPagamento}!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             this.Close(); // Fecha a tela se quiser
+                          // ✅ Gera e mostra a nota fiscal paulista
+            List<string> itens = new List<string>
+{
+    "Café com leite x1 - R$ 8,00",
+    "Pão de queijo x2 - R$ 6,00",
+    "Torta de Oreo x1 - R$ 15,00"
+};
+
+            int numPedido = cmbPedidos.SelectedIndex + 1;
+            decimal total = pedidos.Values.ElementAt(cmbPedidos.SelectedIndex);
+
+            FrmNotaFiscaL nota = new FrmNotaFiscaL(numPedido, total, formaPagamento, itens);
+            nota.ShowDialog();
         }
         
 

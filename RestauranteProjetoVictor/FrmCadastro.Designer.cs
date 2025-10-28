@@ -61,7 +61,7 @@
             this.btnNewCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewCadastro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewCadastro.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNewCadastro.Location = new System.Drawing.Point(513, 218);
+            this.btnNewCadastro.Location = new System.Drawing.Point(515, 207);
             this.btnNewCadastro.Name = "btnNewCadastro";
             this.btnNewCadastro.Size = new System.Drawing.Size(169, 44);
             this.btnNewCadastro.TabIndex = 2;
