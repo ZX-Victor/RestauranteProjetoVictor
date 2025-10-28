@@ -80,30 +80,30 @@
             // lblNewUser
             // 
             this.lblNewUser.AutoSize = true;
-            this.lblNewUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            this.lblNewUser.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewUser.Location = new System.Drawing.Point(230, 168);
             this.lblNewUser.Name = "lblNewUser";
-            this.lblNewUser.Size = new System.Drawing.Size(106, 20);
+            this.lblNewUser.Size = new System.Drawing.Size(105, 23);
             this.lblNewUser.TabIndex = 4;
             this.lblNewUser.Text = "Seu Usuário:";
             // 
             // lblNewPassword
             // 
             this.lblNewPassword.AutoSize = true;
-            this.lblNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            this.lblNewPassword.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewPassword.Location = new System.Drawing.Point(275, 231);
             this.lblNewPassword.Name = "lblNewPassword";
-            this.lblNewPassword.Size = new System.Drawing.Size(61, 20);
+            this.lblNewPassword.Size = new System.Drawing.Size(61, 23);
             this.lblNewPassword.TabIndex = 5;
             this.lblNewPassword.Text = "Senha:";
             // 
             // lblConfirmNewPassword
             // 
             this.lblConfirmNewPassword.AutoSize = true;
-            this.lblConfirmNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            this.lblConfirmNewPassword.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmNewPassword.Location = new System.Drawing.Point(172, 284);
             this.lblConfirmNewPassword.Name = "lblConfirmNewPassword";
-            this.lblConfirmNewPassword.Size = new System.Drawing.Size(164, 20);
+            this.lblConfirmNewPassword.Size = new System.Drawing.Size(165, 23);
             this.lblConfirmNewPassword.TabIndex = 6;
             this.lblConfirmNewPassword.Text = "Confirme sua senha:";
             // 

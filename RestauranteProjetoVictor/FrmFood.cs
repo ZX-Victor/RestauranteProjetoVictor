@@ -197,6 +197,58 @@ namespace RestauranteProjetoVictor
             separadorItem.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             ltvPedido.Items.Add(separadorItem);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (ltvPedido.Items.Count == 0)
+            {
+                MessageBox.Show("Nenhum pedido para finalizar.");
+                return;
+            }
+
+            // Dicionário de pedidos e seus subtotais
+            Dictionary<int, decimal> pedidos = new Dictionary<int, decimal>();
+
+            int numeroAtual = 0;
+            decimal subtotal = 0;
+
+            foreach (ListViewItem item in ltvPedido.Items)
+            {
+                string texto = item.Text;
+
+                if (texto.StartsWith("--- Pedido #"))
+                {
+                    // Se já existe subtotal anterior, salva no dicionário
+                    if (numeroAtual != 0)
+                        pedidos[numeroAtual] = subtotal;
+
+                    // Novo pedido
+                    string numeroStr = texto.Replace("--- Pedido #", "").Replace(" ---", "").Trim();
+                    int.TryParse(numeroStr, out numeroAtual);
+                    subtotal = 0;
+                }
+                else if (texto.StartsWith("Subtotal"))
+                {
+                    // Pula, pois já tratamos subtotal
+                    continue;
+                }
+                else if (item.SubItems.Count >= 4)
+                {
+                    // Soma os totais
+                    string totalStr = item.SubItems[3].Text.Replace("R$", "").Trim();
+                    if (decimal.TryParse(totalStr, out decimal valor))
+                        subtotal += valor;
+                }
+            }
+
+            // Adiciona o último pedido
+            if (numeroAtual != 0)
+                pedidos[numeroAtual] = subtotal;
+
+            // Abre o formulário de finalização passando o dicionário
+            FrmFinalizarPedido frm = new FrmFinalizarPedido(pedidos);
+            frm.ShowDialog();
+        }
     }
 }
 

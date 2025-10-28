@@ -57,6 +57,12 @@
     <Compile Include="FrmCadastro.Designer.cs">
       <DependentUpon>FrmCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmFinalizarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFinalizarPedido.Designer.cs">
+      <DependentUpon>FrmFinalizarPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <EmbeddedResource Include="FrmCadastro.resx">
       <DependentUpon>FrmCadastro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmFinalizarPedido.resx">
+      <DependentUpon>FrmFinalizarPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -107,6 +116,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="CJ3027414PR2DataSet.xsc">
       <DependentUpon>CJ3027414PR2DataSet.xsd</DependentUpon>
@@ -131,6 +141,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lanchonete-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -46,10 +46,10 @@
             // 
             this.lblSignup.AutoSize = true;
             this.lblSignup.BackColor = System.Drawing.Color.Tan;
-            this.lblSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignup.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignup.Location = new System.Drawing.Point(297, 280);
             this.lblSignup.Name = "lblSignup";
-            this.lblSignup.Size = new System.Drawing.Size(161, 24);
+            this.lblSignup.Size = new System.Drawing.Size(155, 25);
             this.lblSignup.TabIndex = 0;
             this.lblSignup.Text = "Faça o seu Login:";
             this.lblSignup.Click += new System.EventHandler(this.label1_Click);
@@ -66,10 +66,10 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.Tan;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(239, 366);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(61, 20);
+            this.lblPassword.Size = new System.Drawing.Size(61, 23);
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Senha:";
             // 
@@ -85,10 +85,10 @@
             // 
             this.lblUser1.AutoSize = true;
             this.lblUser1.BackColor = System.Drawing.Color.Tan;
-            this.lblUser1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            this.lblUser1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser1.Location = new System.Drawing.Point(239, 317);
             this.lblUser1.Name = "lblUser1";
-            this.lblUser1.Size = new System.Drawing.Size(72, 20);
+            this.lblUser1.Size = new System.Drawing.Size(72, 23);
             this.lblUser1.TabIndex = 6;
             this.lblUser1.Text = "Usuário:";
             // 
