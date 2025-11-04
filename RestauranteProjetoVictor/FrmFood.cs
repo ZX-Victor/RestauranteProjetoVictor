@@ -14,14 +14,18 @@ namespace RestauranteProjetoVictor
 {
     public partial class FrmFood : Form
     {
+        private string usuarioLogado;
         int numeroPedido = 1;
         decimal subtotalAtual = 0;
         List<decimal> listaPrecos = new List<decimal>();
         private List<float> preco;
-        public FrmFood()
+
+        // ✅ Construtor modificado para receber o nome do usuário logado
+        public FrmFood(string usuario)
         {
             InitializeComponent();
             preco = new List<float>();
+            usuarioLogado = usuario;
         }
 
         private void lblSnack_Click(object sender, EventArgs e)
@@ -64,14 +68,20 @@ namespace RestauranteProjetoVictor
 
         private void btnProdutos_Click(object sender, EventArgs e)
         {
-            FrmProducts frmProducts = new FrmProducts();
-            frmProducts.ShowDialog();
+            // 🔒 Verifica se o usuário é admin
+            if (usuarioLogado.ToLower() != "admin")
+            {
+                MessageBox.Show("🚫 Você não tem permissão para acessar esta funcionalidade.",
+                                "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            FrmProducts frmProducts = new FrmProducts(usuarioLogado);
+            frmProducts.ShowDialog();
         }
+
         private void EnsurePrecos(string tipo)
         {
-            // se já tiver preços e for do mesmo tipo, você pode pular esta carga.
-            // Para simplicidade, sempre recarrego:
             listaPrecos.Clear();
 
             string connectionString = "Data Source=sqlexpress;Initial Catalog=CJ3027414PR2;User Id=aluno;Password=aluno;";
@@ -88,7 +98,6 @@ namespace RestauranteProjetoVictor
                     {
                         while (reader.Read())
                         {
-                            // supondo que Preco é decimal no banco
                             listaPrecos.Add(Convert.ToDecimal(reader[0]));
                         }
                     }
@@ -99,6 +108,7 @@ namespace RestauranteProjetoVictor
                 }
             }
         }
+
 
 
 
@@ -184,10 +194,7 @@ namespace RestauranteProjetoVictor
                 ltvPedido.Items.Add(new ListViewItem(""));
             }
 
-            // começar novo pedido: incrementa uma vez
-            numeroPedido++;
-            subtotalAtual = 0m;
-
+            // cria separador para o pedido atual
             ListViewItem separadorItem = new ListViewItem($"--- Pedido #{numeroPedido} ---");
             separadorItem.SubItems.Add("");
             separadorItem.SubItems.Add("");
@@ -196,7 +203,12 @@ namespace RestauranteProjetoVictor
             separadorItem.ForeColor = Color.Brown;
             separadorItem.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             ltvPedido.Items.Add(separadorItem);
+
+            // zera o subtotal e incrementa para o próximo
+            subtotalAtual = 0m;
+            numeroPedido++;
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

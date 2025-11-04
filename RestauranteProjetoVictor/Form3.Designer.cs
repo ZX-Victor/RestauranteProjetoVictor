@@ -184,9 +184,9 @@
             this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLoad.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLoad.Location = new System.Drawing.Point(12, 415);
+            this.btnLoad.Location = new System.Drawing.Point(12, 397);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(80, 23);
+            this.btnLoad.Size = new System.Drawing.Size(148, 41);
             this.btnLoad.TabIndex = 9;
             this.btnLoad.Text = "Atualizar";
             this.btnLoad.UseVisualStyleBackColor = false;

@@ -49,7 +49,7 @@
             this.cmbQtb1 = new System.Windows.Forms.ComboBox();
             this.cmbQtb2 = new System.Windows.Forms.ComboBox();
             this.btnNovoPedido = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buton1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -283,19 +283,19 @@
             this.btnNovoPedido.UseVisualStyleBackColor = false;
             this.btnNovoPedido.Click += new System.EventHandler(this.btnNovoPedido_Click);
             // 
-            // button1
+            // buton1
             // 
-            this.button1.BackColor = System.Drawing.Color.SaddleBrown;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(463, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 40);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Finalizar Pedido";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buton1.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buton1.ForeColor = System.Drawing.Color.Transparent;
+            this.buton1.Location = new System.Drawing.Point(463, 358);
+            this.buton1.Name = "buton1";
+            this.buton1.Size = new System.Drawing.Size(110, 40);
+            this.buton1.TabIndex = 21;
+            this.buton1.Text = "Finalizar Pedido";
+            this.buton1.UseVisualStyleBackColor = false;
+            this.buton1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmFood
             // 
@@ -303,7 +303,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buton1);
             this.Controls.Add(this.btnNovoPedido);
             this.Controls.Add(this.cmbQtb2);
             this.Controls.Add(this.cmbQtb1);
@@ -353,6 +353,6 @@
         private System.Windows.Forms.ComboBox cmbQtb1;
         private System.Windows.Forms.ComboBox cmbQtb2;
         private System.Windows.Forms.Button btnNovoPedido;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buton1;
     }
 }

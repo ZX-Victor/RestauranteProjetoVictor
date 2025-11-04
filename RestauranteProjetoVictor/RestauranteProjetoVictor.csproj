@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.7.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.7.0\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +49,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CJ3027414PR2DataSet.Designer.cs">
@@ -81,11 +87,23 @@
     <Compile Include="FrmNotaFiscaL.Designer.cs">
       <DependentUpon>FrmNotaFiscaL.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPedidosCadastrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPedidosCadastrados.Designer.cs">
+      <DependentUpon>FrmPedidosCadastrados.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProducts.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>FrmProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQrCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQrCode.Designer.cs">
+      <DependentUpon>FrmQrCode.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRecuperarSenha.cs">
       <SubType>Form</SubType>
@@ -111,8 +129,14 @@
     <EmbeddedResource Include="FrmNotaFiscaL.resx">
       <DependentUpon>FrmNotaFiscaL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPedidosCadastrados.resx">
+      <DependentUpon>FrmPedidosCadastrados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmProducts.resx">
       <DependentUpon>FrmProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQrCode.resx">
+      <DependentUpon>FrmQrCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRecuperarSenha.resx">
       <DependentUpon>FrmRecuperarSenha.cs</DependentUpon>
@@ -138,6 +162,7 @@
     <None Include="CJ3027414PR2DataSet.xss">
       <DependentUpon>CJ3027414PR2DataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

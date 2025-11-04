@@ -40,10 +40,9 @@ namespace RestauranteProjetoVictor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string usuario = txtUser.Text;
-            string senha = txtPassword.Text;
+            string usuario = txtUser.Text.Trim();
+            string senha = txtPassword.Text.Trim();
 
-            // String de conexão (ajuste Data Source para o nome/instância do seu SQL Server)
             string connectionString =
                 "Data Source=sqlexpress;Initial Catalog=CJ3027414PR2;User Id=aluno;Password=aluno;";
 
@@ -53,11 +52,11 @@ namespace RestauranteProjetoVictor
                 {
                     conexao.Open();
 
+                    // Verifica se o usuário existe no banco
                     string query = "SELECT COUNT(*) FROM Usuarios WHERE Usuario=@usuario AND Senha=@senha";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexao))
                     {
-                        // Evita SQL Injection
                         cmd.Parameters.AddWithValue("@usuario", usuario);
                         cmd.Parameters.AddWithValue("@senha", senha);
 
@@ -65,10 +64,11 @@ namespace RestauranteProjetoVictor
 
                         if (count > 0)
                         {
-                            FrmFood product = new FrmFood();
-                            this.Visible = false;
-                            product.ShowDialog();
-                            this.Visible = true;
+                            // ✅ Se o login for bem-sucedido, envia o nome do usuário para o FrmFood
+                            FrmFood frmFood = new FrmFood(usuario);
+                            this.Hide(); // oculta a tela de login
+                            frmFood.ShowDialog();
+                            this.Show(); // volta à tela de login quando fechar o FrmFood
                         }
                         else
                         {
@@ -81,7 +81,6 @@ namespace RestauranteProjetoVictor
                 {
                     MessageBox.Show("Erro ao conectar no banco: " + ex.Message);
                 }
-
             }
         }
 
@@ -90,6 +89,7 @@ namespace RestauranteProjetoVictor
             FrmCadastro frmCadastro = new FrmCadastro();
             frmCadastro.ShowDialog();
         }
+
 
         private void button1_Click_1(object sender, EventArgs e)
         {

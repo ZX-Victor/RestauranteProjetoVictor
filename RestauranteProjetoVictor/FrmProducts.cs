@@ -17,6 +17,13 @@ namespace RestauranteProjetoVictor
 {
     public partial class FrmProducts : Form
     {
+        private string usuarioLogado;
+
+        public FrmProducts(string usuario)
+        {
+            InitializeComponent();
+            usuarioLogado = usuario;
+        }
         private int id;
         public FrmProducts()
         {
@@ -141,7 +148,7 @@ namespace RestauranteProjetoVictor
                 {
                     MessageBox.Show("Erro ao atualizar: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                FrmFood frmFood = new FrmFood();
+                FrmFood frmFood = new FrmFood(usuarioLogado);
                 frmFood.ShowDialog();
 
 
