@@ -51,6 +51,7 @@
             this.Controls.Add(this.picQrCode);
             this.Name = "FrmQrCode";
             this.Text = "FrmQrCode";
+            this.Load += new System.EventHandler(this.FrmQrCode_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picQrCode)).EndInit();
             this.ResumeLayout(false);
 

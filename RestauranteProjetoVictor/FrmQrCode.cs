@@ -17,5 +17,10 @@ namespace RestauranteProjetoVictor
             InitializeComponent();
             picQrCode.Image = qrImage;
         }
+
+        private void FrmQrCode_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
