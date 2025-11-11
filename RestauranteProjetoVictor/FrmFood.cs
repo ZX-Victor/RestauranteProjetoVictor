@@ -221,8 +221,12 @@ namespace RestauranteProjetoVictor
             // Dicionário de pedidos e seus subtotais
             Dictionary<int, decimal> pedidos = new Dictionary<int, decimal>();
 
+            // Dicionário com os itens de cada pedido (para passar ao próximo formulário)
+            Dictionary<int, List<string>> itensPorPedido = new Dictionary<int, List<string>>();
+
             int numeroAtual = 0;
             decimal subtotal = 0;
+            List<string> itensAtuais = new List<string>();
 
             foreach (ListViewItem item in ltvPedido.Items)
             {
@@ -232,7 +236,11 @@ namespace RestauranteProjetoVictor
                 {
                     // Se já existe subtotal anterior, salva no dicionário
                     if (numeroAtual != 0)
+                    {
                         pedidos[numeroAtual] = subtotal;
+                        itensPorPedido[numeroAtual] = new List<string>(itensAtuais);
+                        itensAtuais.Clear();
+                    }
 
                     // Novo pedido
                     string numeroStr = texto.Replace("--- Pedido #", "").Replace(" ---", "").Trim();
@@ -241,13 +249,22 @@ namespace RestauranteProjetoVictor
                 }
                 else if (texto.StartsWith("Subtotal"))
                 {
-                    // Pula, pois já tratamos subtotal
+                    // Ignora linha de subtotal
                     continue;
                 }
                 else if (item.SubItems.Count >= 4)
                 {
-                    // Soma os totais
-                    string totalStr = item.SubItems[3].Text.Replace("R$", "").Trim();
+                    // Captura o produto e valor
+                    string nomeProduto = item.SubItems[0].Text;
+                    string quantidade = item.SubItems[1].Text;
+                    string precoUnitario = item.SubItems[2].Text;
+                    string totalProduto = item.SubItems[3].Text;
+
+                    // Adiciona o item formatado
+                    itensAtuais.Add($"{nomeProduto} x{quantidade} - {totalProduto}");
+
+                    // Soma o valor total
+                    string totalStr = totalProduto.Replace("R$", "").Trim();
                     if (decimal.TryParse(totalStr, out decimal valor))
                         subtotal += valor;
                 }
@@ -255,10 +272,24 @@ namespace RestauranteProjetoVictor
 
             // Adiciona o último pedido
             if (numeroAtual != 0)
+            {
                 pedidos[numeroAtual] = subtotal;
+                itensPorPedido[numeroAtual] = new List<string>(itensAtuais);
+            }
 
-            // Abre o formulário de finalização passando o dicionário
-            FrmFinalizarPedido frm = new FrmFinalizarPedido(pedidos);
+            // Abre o formulário de finalização passando o dicionário de pedidos e os itens
+            FrmFinalizarPedido frm = new FrmFinalizarPedido(pedidos, itensPorPedido);
+            frm.ShowDialog();
+        }
+
+        private void ltvPedido_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVerEntregas_Click(object sender, EventArgs e)
+        {
+            FrmEntregasCadastradas frm = new FrmEntregasCadastradas();
             frm.ShowDialog();
         }
     }

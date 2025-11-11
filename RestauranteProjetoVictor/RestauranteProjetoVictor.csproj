@@ -63,6 +63,18 @@
     <Compile Include="FrmCadastro.Designer.cs">
       <DependentUpon>FrmCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEntrega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEntrega.Designer.cs">
+      <DependentUpon>FrmEntrega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEntregasCadastradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEntregasCadastradas.Designer.cs">
+      <DependentUpon>FrmEntregasCadastradas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmFinalizarPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +127,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCadastro.resx">
       <DependentUpon>FrmCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEntrega.resx">
+      <DependentUpon>FrmEntrega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEntregasCadastradas.resx">
+      <DependentUpon>FrmEntregasCadastradas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFinalizarPedido.resx">
       <DependentUpon>FrmFinalizarPedido.cs</DependentUpon>

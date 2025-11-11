@@ -18,12 +18,14 @@ namespace RestauranteProjetoVictor
     public partial class FrmFinalizarPedido : Form
     {
         private Dictionary<int, decimal> pedidos;
+        private Dictionary<int, List<string>> itensPorPedido;
         private HashSet<int> pedidosFinalizados = new HashSet<int>();
 
-        public FrmFinalizarPedido(Dictionary<int, decimal> listaPedidos)
+        public FrmFinalizarPedido(Dictionary<int, decimal> listaPedidos, Dictionary<int, List<string>> listaItens)
         {
             InitializeComponent();
             pedidos = listaPedidos;
+            itensPorPedido = listaItens;
 
             // Desabilita bandeiras no início
             cmbBandeira.Enabled = false;
@@ -38,26 +40,19 @@ namespace RestauranteProjetoVictor
                 cmbPedidos.SelectedIndex = 0;
         }
 
-        // 🔹 Quando o formulário abrir
         private void FrmFinalizarPedido_Load(object sender, EventArgs e)
         {
-            // Evita duplicação
             cmbBandeira.Items.Clear();
 
             cmbBandeira.Items.AddRange(new string[]
             {
-        "Visa",
-        "MasterCard",
-        "Elo",
-        "Hipercard",
-        "American Express"
+                "Visa", "MasterCard", "Elo", "Hipercard", "American Express"
             });
 
-            cmbBandeira.SelectedIndex = -1; // deixa nenhuma selecionada
-            cmbBandeira.Enabled = false; // começa desabilitado
+            cmbBandeira.SelectedIndex = -1;
+            cmbBandeira.Enabled = false;
         }
 
-        // 🔹 Quando o usuário muda a seleção de pedido
         private void cmbPedidos_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbPedidos.SelectedIndex < 0)
@@ -67,17 +62,24 @@ namespace RestauranteProjetoVictor
             lblResumo.Text = $"Subtotal do pedido #{itemSelecionado.Key}: R$ {itemSelecionado.Value:F2}";
         }
 
-        // 🔹 Quando clicar em "Finalizar Pedido"
         private void btnPedidoFinalizado_Click(object sender, EventArgs e)
         {
+            if (cmbPedidos.SelectedIndex < 0)
+            {
+                MessageBox.Show("Selecione um pedido para finalizar.",
+                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string formaPagamento = "";
             string tipoCartao = "";
             string bandeira = "";
+
             var itemSelecionado = (KeyValuePair<int, decimal>)cmbPedidos.SelectedItem;
             int numeroPedido = itemSelecionado.Key;
             decimal total = itemSelecionado.Value;
 
-            // Verifica qual forma de pagamento foi selecionada
+            // 🔹 Forma de pagamento
             if (rdbDinheiro.Checked)
             {
                 formaPagamento = "Dinheiro";
@@ -86,21 +88,20 @@ namespace RestauranteProjetoVictor
             {
                 formaPagamento = "PIX";
 
-                // Gera QR Code para pagamento PIX
-                string chavePix = "pix@cafedovictor.com"; // sua chave PIX
-                string nomeLoja = "Café do Victor";
-                string cidade = "São Paulo";
+                // Gera QR Code PIX
+                string chavePix = "pix@Cafe&SalgadosdeVictor.com";
+                string nomeLoja = "Café e Salgados de Victor";
+                string cidade = "Campos do Jordão";
                 string valorPix = total.ToString("F2", System.Globalization.CultureInfo.InvariantCulture);
 
                 string payload = $"00020126580014BR.GOV.BCB.PIX0114{chavePix}520400005303986540{valorPix}5802BR5913{nomeLoja}6009{cidade}62070503***6304";
 
-                using (var qrGenerator = new QRCoder.QRCodeGenerator())
+                using (var qrGenerator = new QRCodeGenerator())
                 {
-                    var qrData = qrGenerator.CreateQrCode(payload, QRCoder.QRCodeGenerator.ECCLevel.Q);
-                    var qrCode = new QRCoder.QRCode(qrData);
+                    var qrData = qrGenerator.CreateQrCode(payload, QRCodeGenerator.ECCLevel.Q);
+                    var qrCode = new QRCode(qrData);
                     var qrImage = qrCode.GetGraphic(20);
 
-                    // Mostra o QR code em uma nova janela (ou dentro da nota fiscal)
                     FrmQrCode frmQr = new FrmQrCode(qrImage);
                     frmQr.ShowDialog();
                 }
@@ -111,7 +112,7 @@ namespace RestauranteProjetoVictor
 
                 if (cmbBandeira.SelectedIndex < 0)
                 {
-                    MessageBox.Show("Selecione a bandeira do cartão (Visa, MasterCard, etc).",
+                    MessageBox.Show("Selecione a bandeira do cartão.",
                         "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
@@ -120,7 +121,6 @@ namespace RestauranteProjetoVictor
                 formaPagamento = $"Cartão de {tipoCartao} ({bandeira})";
             }
 
-            // Verifica se alguma forma de pagamento foi escolhida
             if (string.IsNullOrEmpty(formaPagamento))
             {
                 MessageBox.Show("Selecione uma forma de pagamento.",
@@ -128,17 +128,6 @@ namespace RestauranteProjetoVictor
                 return;
             }
 
-            // Verifica se um pedido foi selecionado
-            if (cmbPedidos.SelectedIndex < 0)
-            {
-                MessageBox.Show("Selecione um pedido para finalizar.",
-                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-           
-
-            // Verifica se o pedido já foi finalizado
             if (pedidosFinalizados.Contains(numeroPedido))
             {
                 MessageBox.Show($"O pedido #{numeroPedido} já foi finalizado.",
@@ -146,23 +135,19 @@ namespace RestauranteProjetoVictor
                 return;
             }
 
-            // Mostra mensagem de sucesso
             MessageBox.Show($"Pagamento do pedido confirmado via {formaPagamento}!",
                 "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Exemplo de itens (pode vir da lista real de produtos)
-            List<string> itens = new List<string>
-    {
-        "Café com leite x1 - R$ 8,00",
-        "Pão de queijo x2 - R$ 6,00",
-        "Torta de Oreo x1 - R$ 15,00"
-    };
+            // 🔹 Busca os itens corretos do pedido
+            List<string> itensDoPedido = itensPorPedido.ContainsKey(numeroPedido)
+                ? itensPorPedido[numeroPedido]
+                : new List<string>();
 
-            // Exibe a nota fiscal
-            FrmNotaFiscaL nota = new FrmNotaFiscaL(numeroPedido, total, formaPagamento, itens);
+            // 🔹 Abre a nota fiscal
+            FrmNotaFiscaL nota = new FrmNotaFiscaL(numeroPedido, total, formaPagamento, itensDoPedido);
             nota.ShowDialog();
 
-            // Marca o pedido como finalizado
+            // 🔹 Marca o pedido como finalizado
             pedidosFinalizados.Add(numeroPedido);
             cmbPedidos.Items.Remove(cmbPedidos.SelectedItem);
             lblResumo.Text = "";
@@ -175,15 +160,19 @@ namespace RestauranteProjetoVictor
                 {
                     conexao.Open();
 
+                    // ✅ Aqui está a correção importante
+                    string itensTexto = string.Join(", ", itensDoPedido);
+
                     string query = @"INSERT INTO Pedidos 
-                             (NumeroPedido, Total, FormaPagamento, DataHora) 
-                             VALUES (@NumeroPedido, @Total, @FormaPagamento, GETDATE())";
+                        (NumeroPedido, Total, FormaPagamento, Itens, DataHora) 
+                        VALUES (@NumeroPedido, @Total, @FormaPagamento, @Itens, GETDATE())";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexao))
                     {
                         cmd.Parameters.AddWithValue("@NumeroPedido", numeroPedido);
                         cmd.Parameters.AddWithValue("@Total", total);
                         cmd.Parameters.AddWithValue("@FormaPagamento", formaPagamento);
+                        cmd.Parameters.AddWithValue("@Itens", itensTexto);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -197,19 +186,26 @@ namespace RestauranteProjetoVictor
                 MessageBox.Show("Erro ao salvar pedido no banco de dados:\n" + ex.Message,
                     "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            // 🔹 Se o cliente marcou entrega, abre o formulário de entrega
+            if (chkEntrega.Checked)
+            {
+                FrmEntrega frmEntrega = new FrmEntrega(numeroPedido);
+                frmEntrega.ShowDialog();
+            }
+
+            // 🔹 Marca o pedido como finalizado
+            pedidosFinalizados.Add(numeroPedido);
+            cmbPedidos.Items.Remove(cmbPedidos.SelectedItem);
+            lblResumo.Text = "";
         }
 
-
-        // 🔹 Quando o usuário selecionar Crédito ou Débito
         private void rdbCredito_CheckedChanged(object sender, EventArgs e)
         {
-            // Habilita o ComboBox de bandeira quando crédito é selecionado
             cmbBandeira.Enabled = rdbCredito.Checked || rdbDebito.Checked;
         }
 
         private void rdbDebito_CheckedChanged(object sender, EventArgs e)
         {
-            // Mesmo comportamento para débito
             cmbBandeira.Enabled = rdbCredito.Checked || rdbDebito.Checked;
         }
 
@@ -220,7 +216,6 @@ namespace RestauranteProjetoVictor
         }
     }
 }
-
 
 
 

@@ -21,6 +21,8 @@ namespace RestauranteProjetoVictor
             // 🎫 Título
             lblTitulo.Text = "NOTA FISCAL PAULISTA";
             lblTitulo.Font = new Font("Courier New", 14, FontStyle.Bold);
+            // 🔹 Mostra cada item em uma linha separada
+
 
             // 📅 Informações básicas
             lblPedido.Text = $"Pedido nº {numeroPedido}";
@@ -62,7 +64,52 @@ namespace RestauranteProjetoVictor
             // 🍽️ Itens
             foreach (string item in itens)
                 lstItens.Items.Add(item);
+
+            // 🍽️ Itens — Estilo nota fiscal real, com quebra de linha
+            lstItens.Items.Clear();
+            lstItens.Font = new Font("Consolas", 10); // Fonte monoespaçada p/ alinhamento
+
+            lstItens.Items.Add("ITENS DO PEDIDO");
+            lstItens.Items.Add("----------------------------------------");
+
+            foreach (string item in itens)
+            {
+                // Exemplo esperado: "Waffle de Pão de Queijo x2 - R$ 12,00"
+                string nomeProduto = item;
+                string quantidade = "";
+                string preco = "";
+
+                int idxQtd = item.IndexOf('x');
+                int idxPreco = item.IndexOf("R$");
+
+                if (idxQtd > 0)
+                {
+                    nomeProduto = item.Substring(0, idxQtd).Trim();
+
+                    if (idxPreco > idxQtd)
+                    {
+                        quantidade = item.Substring(idxQtd, idxPreco - idxQtd).Trim();
+                        preco = item.Substring(idxPreco).Trim();
+                    }
+                    else
+                    {
+                        quantidade = item.Substring(idxQtd).Trim();
+                    }
+                }
+
+                // Primeira linha: nome completo do produto
+                lstItens.Items.Add(nomeProduto);
+
+                // Segunda linha: detalhes alinhados
+                string linhaDetalhe = $"     {quantidade,-8}  {preco,10}";
+                lstItens.Items.Add(linhaDetalhe);
+
+                // Linha separadora entre produtos
+                lstItens.Items.Add("----------------------------------------");
+            }
         }
+
+
 
 
         private void btnFechar_Click(object sender, EventArgs e)

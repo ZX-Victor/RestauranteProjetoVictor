@@ -35,7 +35,6 @@
             this.lblSnack = new System.Windows.Forms.Label();
             this.lblSweets = new System.Windows.Forms.Label();
             this.lblDrinks = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnProdutos = new System.Windows.Forms.Button();
             this.cmbSalgados = new System.Windows.Forms.ComboBox();
             this.cmbDoces = new System.Windows.Forms.ComboBox();
@@ -50,6 +49,8 @@
             this.cmbQtb2 = new System.Windows.Forms.ComboBox();
             this.btnNovoPedido = new System.Windows.Forms.Button();
             this.buton1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnVerEntregas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,9 +60,9 @@
             this.btnDrinks1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDrinks1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDrinks1.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDrinks1.Location = new System.Drawing.Point(680, 264);
+            this.btnDrinks1.Location = new System.Drawing.Point(681, 211);
             this.btnDrinks1.Name = "btnDrinks1";
-            this.btnDrinks1.Size = new System.Drawing.Size(117, 31);
+            this.btnDrinks1.Size = new System.Drawing.Size(117, 34);
             this.btnDrinks1.TabIndex = 0;
             this.btnDrinks1.Text = "Escolha a bebida";
             this.btnDrinks1.UseVisualStyleBackColor = false;
@@ -73,7 +74,7 @@
             this.btnSweets1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSweets1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSweets1.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSweets1.Location = new System.Drawing.Point(680, 211);
+            this.btnSweets1.Location = new System.Drawing.Point(681, 261);
             this.btnSweets1.Name = "btnSweets1";
             this.btnSweets1.Size = new System.Drawing.Size(117, 34);
             this.btnSweets1.TabIndex = 1;
@@ -126,26 +127,15 @@
             this.lblDrinks.TabIndex = 5;
             this.lblDrinks.Text = "Bebidas:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Tan;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(518, 301);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(408, 220);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnProdutos
             // 
             this.btnProdutos.BackColor = System.Drawing.Color.SaddleBrown;
             this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProdutos.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnProdutos.ForeColor = System.Drawing.Color.Transparent;
-            this.btnProdutos.Location = new System.Drawing.Point(681, 28);
+            this.btnProdutos.Location = new System.Drawing.Point(659, 12);
             this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(118, 41);
+            this.btnProdutos.Size = new System.Drawing.Size(129, 30);
             this.btnProdutos.TabIndex = 10;
             this.btnProdutos.Text = "Adicionar Produtos";
             this.btnProdutos.UseVisualStyleBackColor = false;
@@ -153,29 +143,29 @@
             // 
             // cmbSalgados
             // 
-            this.cmbSalgados.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSalgados.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cmbSalgados.FormattingEnabled = true;
             this.cmbSalgados.Location = new System.Drawing.Point(463, 164);
             this.cmbSalgados.Name = "cmbSalgados";
-            this.cmbSalgados.Size = new System.Drawing.Size(133, 21);
+            this.cmbSalgados.Size = new System.Drawing.Size(133, 23);
             this.cmbSalgados.TabIndex = 11;
             // 
             // cmbDoces
             // 
-            this.cmbDoces.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDoces.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cmbDoces.FormattingEnabled = true;
             this.cmbDoces.Location = new System.Drawing.Point(463, 219);
             this.cmbDoces.Name = "cmbDoces";
-            this.cmbDoces.Size = new System.Drawing.Size(133, 21);
+            this.cmbDoces.Size = new System.Drawing.Size(133, 23);
             this.cmbDoces.TabIndex = 12;
             // 
             // cmbBebidas
             // 
-            this.cmbBebidas.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.cmbBebidas.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cmbBebidas.FormattingEnabled = true;
             this.cmbBebidas.Location = new System.Drawing.Point(463, 271);
             this.cmbBebidas.Name = "cmbBebidas";
-            this.cmbBebidas.Size = new System.Drawing.Size(133, 25);
+            this.cmbBebidas.Size = new System.Drawing.Size(133, 23);
             this.cmbBebidas.TabIndex = 13;
             // 
             // ltvPedido
@@ -185,6 +175,7 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.ltvPedido.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ltvPedido.HideSelection = false;
             this.ltvPedido.Location = new System.Drawing.Point(-2, 0);
             this.ltvPedido.Name = "ltvPedido";
@@ -192,6 +183,7 @@
             this.ltvPedido.TabIndex = 16;
             this.ltvPedido.UseCompatibleStateImageBehavior = false;
             this.ltvPedido.View = System.Windows.Forms.View.Details;
+            this.ltvPedido.SelectedIndexChanged += new System.EventHandler(this.ltvPedido_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -214,6 +206,7 @@
             // 
             // cmbQtb
             // 
+            this.cmbQtb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cmbQtb.FormattingEnabled = true;
             this.cmbQtb.Items.AddRange(new object[] {
             "1",
@@ -228,11 +221,12 @@
             "10"});
             this.cmbQtb.Location = new System.Drawing.Point(615, 164);
             this.cmbQtb.Name = "cmbQtb";
-            this.cmbQtb.Size = new System.Drawing.Size(50, 21);
+            this.cmbQtb.Size = new System.Drawing.Size(50, 23);
             this.cmbQtb.TabIndex = 17;
             // 
             // cmbQtb1
             // 
+            this.cmbQtb1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cmbQtb1.FormattingEnabled = true;
             this.cmbQtb1.Items.AddRange(new object[] {
             "1",
@@ -247,11 +241,12 @@
             "10"});
             this.cmbQtb1.Location = new System.Drawing.Point(615, 219);
             this.cmbQtb1.Name = "cmbQtb1";
-            this.cmbQtb1.Size = new System.Drawing.Size(50, 21);
+            this.cmbQtb1.Size = new System.Drawing.Size(50, 23);
             this.cmbQtb1.TabIndex = 18;
             // 
             // cmbQtb2
             // 
+            this.cmbQtb2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cmbQtb2.FormattingEnabled = true;
             this.cmbQtb2.Items.AddRange(new object[] {
             "1",
@@ -266,7 +261,7 @@
             "10"});
             this.cmbQtb2.Location = new System.Drawing.Point(615, 274);
             this.cmbQtb2.Name = "cmbQtb2";
-            this.cmbQtb2.Size = new System.Drawing.Size(50, 21);
+            this.cmbQtb2.Size = new System.Drawing.Size(50, 23);
             this.cmbQtb2.TabIndex = 19;
             // 
             // btnNovoPedido
@@ -277,7 +272,7 @@
             this.btnNovoPedido.ForeColor = System.Drawing.Color.Transparent;
             this.btnNovoPedido.Location = new System.Drawing.Point(463, 404);
             this.btnNovoPedido.Name = "btnNovoPedido";
-            this.btnNovoPedido.Size = new System.Drawing.Size(110, 34);
+            this.btnNovoPedido.Size = new System.Drawing.Size(110, 26);
             this.btnNovoPedido.TabIndex = 20;
             this.btnNovoPedido.Text = "Novo Pedido";
             this.btnNovoPedido.UseVisualStyleBackColor = false;
@@ -289,13 +284,38 @@
             this.buton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buton1.ForeColor = System.Drawing.Color.Transparent;
-            this.buton1.Location = new System.Drawing.Point(463, 358);
+            this.buton1.Location = new System.Drawing.Point(463, 357);
             this.buton1.Name = "buton1";
-            this.buton1.Size = new System.Drawing.Size(110, 40);
+            this.buton1.Size = new System.Drawing.Size(110, 26);
             this.buton1.TabIndex = 21;
             this.buton1.Text = "Finalizar Pedido";
             this.buton1.UseVisualStyleBackColor = false;
             this.buton1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Tan;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(518, 301);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(408, 220);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnVerEntregas
+            // 
+            this.btnVerEntregas.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btnVerEntregas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerEntregas.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnVerEntregas.ForeColor = System.Drawing.Color.Transparent;
+            this.btnVerEntregas.Location = new System.Drawing.Point(659, 64);
+            this.btnVerEntregas.Name = "btnVerEntregas";
+            this.btnVerEntregas.Size = new System.Drawing.Size(129, 28);
+            this.btnVerEntregas.TabIndex = 22;
+            this.btnVerEntregas.Text = "Ver Entregas";
+            this.btnVerEntregas.UseVisualStyleBackColor = false;
+            this.btnVerEntregas.Click += new System.EventHandler(this.btnVerEntregas_Click);
             // 
             // FrmFood
             // 
@@ -303,6 +323,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVerEntregas);
             this.Controls.Add(this.buton1);
             this.Controls.Add(this.btnNovoPedido);
             this.Controls.Add(this.cmbQtb2);
@@ -354,5 +375,6 @@
         private System.Windows.Forms.ComboBox cmbQtb2;
         private System.Windows.Forms.Button btnNovoPedido;
         private System.Windows.Forms.Button buton1;
+        private System.Windows.Forms.Button btnVerEntregas;
     }
 }

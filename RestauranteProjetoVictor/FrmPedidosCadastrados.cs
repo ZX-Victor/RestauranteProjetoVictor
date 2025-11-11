@@ -48,5 +48,10 @@ namespace RestauranteProjetoVictor
                 }
             }
         }
+
+        private void dgvPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

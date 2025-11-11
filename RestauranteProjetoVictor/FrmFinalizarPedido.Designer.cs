@@ -32,23 +32,25 @@
             this.lblResumo = new System.Windows.Forms.Label();
             this.btnPedidoFinalizado = new System.Windows.Forms.Button();
             this.grpResumo = new System.Windows.Forms.GroupBox();
+            this.cmbBandeira = new System.Windows.Forms.ComboBox();
             this.rdbPix = new System.Windows.Forms.RadioButton();
-            this.rdbDinheiro = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnVerPedidos = new System.Windows.Forms.Button();
             this.rdbDebito = new System.Windows.Forms.RadioButton();
             this.rdbCredito = new System.Windows.Forms.RadioButton();
-            this.cmbBandeira = new System.Windows.Forms.ComboBox();
+            this.rdbDinheiro = new System.Windows.Forms.RadioButton();
+            this.btnVerPedidos = new System.Windows.Forms.Button();
+            this.chkEntrega = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpResumo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbPedidos
             // 
+            this.cmbPedidos.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cmbPedidos.FormattingEnabled = true;
-            this.cmbPedidos.Location = new System.Drawing.Point(357, 18);
+            this.cmbPedidos.Location = new System.Drawing.Point(357, 12);
             this.cmbPedidos.Name = "cmbPedidos";
-            this.cmbPedidos.Size = new System.Drawing.Size(121, 21);
+            this.cmbPedidos.Size = new System.Drawing.Size(121, 23);
             this.cmbPedidos.TabIndex = 0;
             this.cmbPedidos.SelectedIndexChanged += new System.EventHandler(this.cmbPedidos_SelectedIndexChanged);
             // 
@@ -56,7 +58,7 @@
             // 
             this.lblResumo.AutoSize = true;
             this.lblResumo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResumo.Location = new System.Drawing.Point(16, 12);
+            this.lblResumo.Location = new System.Drawing.Point(16, 9);
             this.lblResumo.Name = "lblResumo";
             this.lblResumo.Size = new System.Drawing.Size(146, 25);
             this.lblResumo.TabIndex = 1;
@@ -77,23 +79,39 @@
             // 
             // grpResumo
             // 
+            this.grpResumo.Controls.Add(this.chkEntrega);
             this.grpResumo.Controls.Add(this.cmbBandeira);
             this.grpResumo.Controls.Add(this.rdbPix);
             this.grpResumo.Controls.Add(this.rdbDebito);
             this.grpResumo.Controls.Add(this.rdbCredito);
             this.grpResumo.Controls.Add(this.rdbDinheiro);
-            this.grpResumo.Location = new System.Drawing.Point(21, 56);
+            this.grpResumo.Location = new System.Drawing.Point(21, 37);
             this.grpResumo.Name = "grpResumo";
-            this.grpResumo.Size = new System.Drawing.Size(457, 295);
+            this.grpResumo.Size = new System.Drawing.Size(457, 308);
             this.grpResumo.TabIndex = 3;
             this.grpResumo.TabStop = false;
             this.grpResumo.Text = "Resumo do Pedido";
+            // 
+            // cmbBandeira
+            // 
+            this.cmbBandeira.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbBandeira.FormattingEnabled = true;
+            this.cmbBandeira.Items.AddRange(new object[] {
+            "Visa",
+            "MasterCard",
+            "Elo",
+            "HiperCard",
+            "American Express"});
+            this.cmbBandeira.Location = new System.Drawing.Point(108, 129);
+            this.cmbBandeira.Name = "cmbBandeira";
+            this.cmbBandeira.Size = new System.Drawing.Size(121, 23);
+            this.cmbBandeira.TabIndex = 10;
             // 
             // rdbPix
             // 
             this.rdbPix.AutoSize = true;
             this.rdbPix.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rdbPix.Location = new System.Drawing.Point(21, 94);
+            this.rdbPix.Location = new System.Drawing.Point(17, 63);
             this.rdbPix.Name = "rdbPix";
             this.rdbPix.Size = new System.Drawing.Size(47, 23);
             this.rdbPix.TabIndex = 6;
@@ -101,27 +119,41 @@
             this.rdbPix.Text = "PIX";
             this.rdbPix.UseVisualStyleBackColor = true;
             // 
+            // rdbDebito
+            // 
+            this.rdbDebito.AutoSize = true;
+            this.rdbDebito.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.rdbDebito.Location = new System.Drawing.Point(17, 152);
+            this.rdbDebito.Name = "rdbDebito";
+            this.rdbDebito.Size = new System.Drawing.Size(68, 23);
+            this.rdbDebito.TabIndex = 8;
+            this.rdbDebito.Text = "Débito";
+            this.rdbDebito.UseVisualStyleBackColor = true;
+            this.rdbDebito.CheckedChanged += new System.EventHandler(this.rdbDebito_CheckedChanged);
+            // 
+            // rdbCredito
+            // 
+            this.rdbCredito.AutoSize = true;
+            this.rdbCredito.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.rdbCredito.Location = new System.Drawing.Point(17, 103);
+            this.rdbCredito.Name = "rdbCredito";
+            this.rdbCredito.Size = new System.Drawing.Size(72, 23);
+            this.rdbCredito.TabIndex = 7;
+            this.rdbCredito.Text = "Crédito";
+            this.rdbCredito.UseVisualStyleBackColor = true;
+            this.rdbCredito.CheckedChanged += new System.EventHandler(this.rdbCredito_CheckedChanged);
+            // 
             // rdbDinheiro
             // 
             this.rdbDinheiro.AutoSize = true;
             this.rdbDinheiro.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rdbDinheiro.Location = new System.Drawing.Point(17, 36);
+            this.rdbDinheiro.Location = new System.Drawing.Point(17, 21);
             this.rdbDinheiro.Name = "rdbDinheiro";
             this.rdbDinheiro.Size = new System.Drawing.Size(79, 23);
             this.rdbDinheiro.TabIndex = 4;
             this.rdbDinheiro.TabStop = true;
             this.rdbDinheiro.Text = "Dinheiro";
             this.rdbDinheiro.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::RestauranteProjetoVictor.Properties.Resources.Lanchonete_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(514, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(315, 367);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // btnVerPedidos
             // 
@@ -137,43 +169,26 @@
             this.btnVerPedidos.UseVisualStyleBackColor = false;
             this.btnVerPedidos.Click += new System.EventHandler(this.btnVerPedidos_Click);
             // 
-            // rdbDebito
+            // chkEntrega
             // 
-            this.rdbDebito.AutoSize = true;
-            this.rdbDebito.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rdbDebito.Location = new System.Drawing.Point(21, 210);
-            this.rdbDebito.Name = "rdbDebito";
-            this.rdbDebito.Size = new System.Drawing.Size(68, 23);
-            this.rdbDebito.TabIndex = 8;
-            this.rdbDebito.Text = "Débito";
-            this.rdbDebito.UseVisualStyleBackColor = true;
-            this.rdbDebito.CheckedChanged += new System.EventHandler(this.rdbDebito_CheckedChanged);
+            this.chkEntrega.AutoSize = true;
+            this.chkEntrega.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.chkEntrega.Location = new System.Drawing.Point(17, 243);
+            this.chkEntrega.Name = "chkEntrega";
+            this.chkEntrega.Size = new System.Drawing.Size(158, 23);
+            this.chkEntrega.TabIndex = 11;
+            this.chkEntrega.Text = "Entrega em Domicílio";
+            this.chkEntrega.UseVisualStyleBackColor = true;
             // 
-            // rdbCredito
+            // pictureBox1
             // 
-            this.rdbCredito.AutoSize = true;
-            this.rdbCredito.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rdbCredito.Location = new System.Drawing.Point(17, 152);
-            this.rdbCredito.Name = "rdbCredito";
-            this.rdbCredito.Size = new System.Drawing.Size(72, 23);
-            this.rdbCredito.TabIndex = 7;
-            this.rdbCredito.Text = "Crédito";
-            this.rdbCredito.UseVisualStyleBackColor = true;
-            this.rdbCredito.CheckedChanged += new System.EventHandler(this.rdbCredito_CheckedChanged);
-            // 
-            // cmbBandeira
-            // 
-            this.cmbBandeira.FormattingEnabled = true;
-            this.cmbBandeira.Items.AddRange(new object[] {
-            "Visa",
-            "MasterCard",
-            "Elo",
-            "HiperCard",
-            "American Express"});
-            this.cmbBandeira.Location = new System.Drawing.Point(116, 179);
-            this.cmbBandeira.Name = "cmbBandeira";
-            this.cmbBandeira.Size = new System.Drawing.Size(121, 21);
-            this.cmbBandeira.TabIndex = 10;
+            this.pictureBox1.Image = global::RestauranteProjetoVictor.Properties.Resources.Lanchonete_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(514, 78);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(315, 367);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmFinalizarPedido
             // 
@@ -212,5 +227,6 @@
         private System.Windows.Forms.RadioButton rdbDebito;
         private System.Windows.Forms.RadioButton rdbCredito;
         private System.Windows.Forms.ComboBox cmbBandeira;
+        private System.Windows.Forms.CheckBox chkEntrega;
     }
 }

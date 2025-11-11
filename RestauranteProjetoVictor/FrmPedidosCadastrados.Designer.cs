@@ -45,6 +45,7 @@
             this.dgvPedidos.ReadOnly = true;
             this.dgvPedidos.Size = new System.Drawing.Size(800, 411);
             this.dgvPedidos.TabIndex = 0;
+            this.dgvPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidos_CellContentClick);
             // 
             // btnAtualizar
             // 
