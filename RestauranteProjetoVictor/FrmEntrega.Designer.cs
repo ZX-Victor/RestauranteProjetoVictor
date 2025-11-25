@@ -134,8 +134,10 @@
             this.txtEndereco.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEndereco.Location = new System.Drawing.Point(461, 198);
             this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.ShortcutsEnabled = false;
             this.txtEndereco.Size = new System.Drawing.Size(187, 23);
             this.txtEndereco.TabIndex = 9;
+            this.txtEndereco.TabStop = false;
             // 
             // txtBairro
             // 
@@ -144,6 +146,7 @@
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(186, 23);
             this.txtBairro.TabIndex = 10;
+            this.txtBairro.TabStop = false;
             // 
             // txtCidade
             // 
@@ -152,6 +155,7 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(187, 23);
             this.txtCidade.TabIndex = 11;
+            this.txtCidade.TabStop = false;
             // 
             // cmbStatus
             // 

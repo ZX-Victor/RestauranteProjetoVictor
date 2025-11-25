@@ -5,9 +5,11 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace RestauranteProjetoVictor
 {
@@ -55,8 +57,8 @@ namespace RestauranteProjetoVictor
                 txtCidade.KeyPress += SomenteLetrasComEspaco;
             }
         }
-// Método auxiliar para aceitar apenas letras e espaço
-private void SomenteLetrasComEspaco(object sender, KeyPressEventArgs e)
+        // Método auxiliar para aceitar apenas letras e espaço
+        private void SomenteLetrasComEspaco(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
             {
@@ -82,7 +84,7 @@ private void SomenteLetrasComEspaco(object sender, KeyPressEventArgs e)
 
 
         private void btnSalvarEntrega_Click(object sender, EventArgs e)
-            {
+        {
             // Pega os dados digitados
             string nome = txtNome1.Text.Trim();
             string telefone = txtTelefone.Text.Trim();
@@ -135,21 +137,21 @@ private void SomenteLetrasComEspaco(object sender, KeyPressEventArgs e)
         }
 
         private void LimparCampos()
-            {
-                txtPedido1.Clear();
-                txtNome1.Clear();
-                txtTelefone.Clear();
-                txtEndereco.Clear();
-                txtBairro.Clear();
-                txtCidade.Clear();
-                cmbStatus.SelectedIndex = -1;
-            }
+        {
+            txtPedido1.Clear();
+            txtNome1.Clear();
+            txtTelefone.Clear();
+            txtEndereco.Clear();
+            txtBairro.Clear();
+            txtCidade.Clear();
+            cmbStatus.SelectedIndex = -1;
+        }
 
         private void FrmEntrega_Load(object sender, EventArgs e)
         {
 
         }
 
-        
+
     }
-    }
+}
